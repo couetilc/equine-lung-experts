@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    client-nginx:
+        container_name: clientNginx
+        build:
+            context: ./client-nginx/
+            dockerfile: ./client-nginx/Dockerfile-production
+        ports:
+            - "80:80"
