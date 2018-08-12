@@ -11,8 +11,8 @@ services:
         # Mount the "" directory inside the container at ""
         # Used for development so applications files can be modified at will. Should be changed for production so there are no shared volumes.
         volumes:
-            - "./client-react/app:/srv/client-react/"
-            - "/srv/client-react/node_modules"
+            - "./client-react/app:/home/client-react/app"
+            - "/home/client-react/node_modules"
 
         # Restart container regardless of exit status: Restart indefinitely
         # May want different values for dev/prod
@@ -22,8 +22,9 @@ services:
         expose:
             - "8000"
         
+        # Map hosts 4000 port to "client-react"'s 3000 port.
         ports:
-            - "2000:3000"
+            - "4000:3000"
 
 
         # Don't create this container until "" below have been created.
@@ -35,3 +36,23 @@ services:
         # Pass environment variables to the flask container
         environment:
             REACT_APP_DEV: 1
+
+        # instruct "client-react"'s containers to share port 3000 via load-balanced network "frontend"
+        #networks:
+        #- frontend
+    
+      #docker-visualizer:
+      #image: dockersamples/visualizer:stable
+      #ports:
+      #- "8080:8080"
+      #volumes:
+      #- "/var/run/docker.sock:/var/run/docker/sock"
+      #deploy:
+      #placement:
+      #constrainst: [node.role == manager]
+      #networks:
+      #- frontend
+
+# Define the "frontend" network with default settings (load-balanced overlay network)
+#networks:
+#frontend:
