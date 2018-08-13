@@ -1,58 +1,32 @@
 version: '3'
 # This will be focused on development. Production composition file will be under docker-compose-production.yml
 services:
-    # Define the React client application
-    client-react:
-        # Build from the Dockerfile in the directory
+    client:
+        container_name: react-client
         build: 
-            context: ./client-react
-            dockerfile: ./client-react/Dockerfile
-
-        # Mount the "" directory inside the container at ""
-        # Used for development so applications files can be modified at will. Should be changed for production so there are no shared volumes.
+            context: ./client
+            dockerfile: Dockerfile
         volumes:
             - "./client-react/app:/home/client-react/app"
             - "/home/client-react/node_modules"
-
-        # Restart container regardless of exit status: Restart indefinitely
-        # May want different values for dev/prod
-        restart: always
-
-        # Expose port 8000 to other containers (not to the host machine)
-        expose:
-            - "8000"
-        
-        # Map hosts 4000 port to "client-react"'s 3000 port.
         ports:
             - "4000:3000"
-
-
-        # Don't create this container until "" below have been created.
         depends_on:
-
-        # Link the "" containers together so that they can talk to one another
-        links:
-
-        # Pass environment variables to the flask container
+            - server
         environment:
             REACT_APP_DEV: 1
-
-        # instruct "client-react"'s containers to share port 3000 via load-balanced network "frontend"
-        #networks:
-        #- frontend
     
-      #docker-visualizer:
-      #image: dockersamples/visualizer:stable
-      #ports:
-      #- "8080:8080"
-      #volumes:
-      #- "/var/run/docker.sock:/var/run/docker/sock"
-      #deploy:
-      #placement:
-      #constrainst: [node.role == manager]
-      #networks:
-      #- frontend
-
-# Define the "frontend" network with default settings (load-balanced overlay network)
-#networks:
-#frontend:
+    server:
+        container_name: node-server
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        #restart: always
+        volumes: 
+            - './server/node-server:/home/node-server/'
+            - '/home/node-server/node_modules'
+        ports:
+            - '2000:3000'
+        environment:
+            NODE_ENV: development
+            PORT: 3000
