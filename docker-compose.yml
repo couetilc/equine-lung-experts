@@ -11,10 +11,10 @@ services:
             - "/home/client-react/node_modules"
         ports:
             - "4000:3000"
-        depends_on:
-            - server
         environment:
             REACT_APP_DEV: 1
+        depends_on:
+            - server
     
     server:
         container_name: node-server
@@ -27,6 +27,8 @@ services:
             - '/home/node-server/node_modules'
         ports:
             - '2000:3000'
+        # for confidential configurations
+        env_file: .env
         environment:
             NODE_ENV: development
             PORT: 3000

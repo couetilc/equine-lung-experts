@@ -1,0 +1,11 @@
+# confidential
+.env
+
+# build files
+node_modules
+
+# temporary files
+*.swp
+
+# MacOS specific files
+.DS_Store
