@@ -1,3 +1,146 @@
+/* App Dimensions */
+$width-page: 64 rem;
+$height-header: 6.25rem;
+$height-menubar: 2rem;
+$height-banner: 25rem;
+
+/* Color Palette */
+$color-black: #222222;
+$color-bg-grey-dark: #2B2B2B;
+$color-bg-grey-light: #333333;
+$color-contrast-white: #cacaca;
+$color-contrast-grey: #999999;
+$color-primary-green: #40AC46;
+$color-faded-green: #EDF5EE;
+$color-primary-blue: #4790C1;
+
+/* New Palette */
+$color-green: #40ac47;
+$color-green-lightest: #97de9c;
+$color-green-light: #67c86d;
+$color-green-dark: #23982b;
+$color-green-darkest: #0f7716;
+$color-purple: #b1427f;
+$color-purple-lightest: #e299c1;
+$color-purple-light: #cd69a0;
+$color-purple-dark: #9c2466;
+$color-purple-darkest: #7b0f4a;
+$color-orange: #db9151;
+$color-orange-lightest: #ffd3ad;
+$color-orange-light: #febb82;
+$color-orange-dark: #c1712c;
+$color-orange-darkest: #985013;
+$color-red: #db5551;
+$color-red-lightest: #ffafad;
+$color-red-light: #fe8582;
+$color-red-dark: #c1302c;
+$color-red-darkest: #981613;
+
+/* Font Choices */
+@mixin mx-font-banner-title {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    font-family: Verdana, sans-serif;
+}
+@mixin mx-font-banner-content {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    font-family: Verdana, sans-serif;
+}
+@mixin mx-font-h {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    font-family: Verdana, sans-serif;
+}
+@mixin mx-font-h-caps {
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 700;
+    font-family: Verdana, sans-serif;
+}
+@mixin mx-font-ui {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    font-family: Helvetica, Arial, system-ui, sans-serif;
+}
+@mixin mx-font-content {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Helvetica, Arial, sans-serif;
+}
+@mixin mx-font-content-alt {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Tahoma, sans-serif;
+}
+
+/* Desktop Styles */
+html {
+    font-size: 1em;
+    background-color: $color-green;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    color: $color-green;
+    font-size: 2.5rem;
+    margin: 2rem 1rem 1rem 1rem;
+    @include mx-font-h;
+}
+
+h2 {
+    color: $color-black;
+    font-size: 2.5rem;
+    margin: 2rem 1rem .5rem 1rem;
+    border-bottom: .125rem solid $color-bg-grey-light;
+    @include mx-font-h;
+}
+
+h3 {
+    color: $color-bg-grey-light;
+    font-size: 1.875rem;
+    margin: 1.5rem 1rem 1rem 1rem;
+    @include mx-font-h;
+}
+
+h4 {
+}
+
+h5 {
+    color: $color-bg-grey-dark;
+    margin: .5rem 1rem 1rem 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    @include mx-font-content;
+}
+
+h6 {
+    color: $color-bg-grey-light;
+    font-size: 1.25rem;
+    @include mx-font-content;
+}
+
+p {
+    color: $color-bg-grey-dark;
+    font-size: 1.25rem;
+    margin: .5rem 1rem;
+    @include mx-font-content;
+}
+
+#app {
+}
+
+/* Responsive Design */
 @media screen and (max-width: 991px) {
     /* large tablet */
 }
