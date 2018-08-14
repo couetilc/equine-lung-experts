@@ -1,8 +1,10 @@
 # confidential
 .env
 
-# node build files
+# npm build files
 node_modules
+.npm
+.config
 
 # Vim usage files
 *.sw?
