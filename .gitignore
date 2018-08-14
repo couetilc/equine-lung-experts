@@ -1,3 +1,15 @@
-# temporary files
-*.swp
+# confidential
+.env
+
+# node build files
 node_modules
+
+# Vim usage files
+*.sw?
+
+# SASS build files
+.sass-cache
+*.css.map
+
+# MacOS directory files
+.DS_Store

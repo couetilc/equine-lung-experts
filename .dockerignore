@@ -1,0 +1,9 @@
+# development
+.git*
+node_modules
+
+# Vim usage files
+*.swp
+
+# MacOS specific
+.DS_Store

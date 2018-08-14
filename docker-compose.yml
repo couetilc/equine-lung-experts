@@ -7,14 +7,14 @@ services:
             context: ./client
             dockerfile: Dockerfile
         volumes:
-            - "./client-react/app:/home/client-react/app"
-            - "/home/client-react/node_modules"
+            - "./client/react-app:/home/react-app"
+            - "/home/react-app/node_modules"
         ports:
-            - "4000:3000"
+            - "3000:3000"
         environment:
             REACT_APP_DEV: 1
-        depends_on:
-            - server
+        #depends_on:
+            #- server
     
     server:
         container_name: node-server
@@ -26,9 +26,9 @@ services:
             - './server/node-server:/home/node-server/'
             - '/home/node-server/node_modules'
         ports:
-            - '2000:3000'
+            - '7777:7777'
         # for confidential configurations
-        env_file: .env
+        env_file: ./server/.env
         environment:
             NODE_ENV: development
-            PORT: 3000
+            PORT: 7777
