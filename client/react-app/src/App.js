@@ -66,7 +66,7 @@ class HomeBanner extends Component {
             content: "Respiratory diseases cause poor performance in racing, sport and recreational horses. Through testing and diagnostic services, the veterinary scientists at Equine Lung Experts will help you solve respiratory disease caused by health or environmental exposures.",
             action: {
                 link: "#",
-                text: "Learn More ->"
+                text: "LEARN MORE"
             }
         }};
     }

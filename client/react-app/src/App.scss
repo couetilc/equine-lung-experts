@@ -4,16 +4,15 @@ $height-header: 6.25rem;
 $height-menubar: 2rem;
 $height-banner: 25rem;
 
-/* Color Palette */
+/* UI Palette */
 $color-black: #222222;
-$color-bg-grey-dark: #2B2B2B; $color-bg-grey-light: #333333;
+$color-bg-grey-dark: #2B2B2B; 
+$color-bg-grey-light: #333333;
 $color-contrast-white: #cacaca;
 $color-contrast-grey: #999999;
-$color-primary-green: #40AC46;
 $color-faded-green: #EDF5EE;
-$color-primary-blue: #4790C1;
 
-/* New Palette */
+/* Main Palette */
 $color-green: #40ac47;
 $color-green-lightest: #97de9c;
 $color-green-light: #67c86d;
@@ -34,6 +33,23 @@ $color-red-lightest: #ffafad;
 $color-red-light: #fe8582;
 $color-red-dark: #c1302c;
 $color-red-darkest: #981613;
+
+/* Alt Palette */
+$color-blue: #4791c1;
+$color-blue-lightest: #9dcbe9;
+$color-blue-light: #6bacd5;
+$color-blue-dark: #2a79ad;
+$color-blue-darkest: #0c6098;
+$color-yellow: #ffd254;
+$color-yellow-lightest: #ffe8a6;
+$color-yellow-light: #ffdc78;
+$color-yellow-dark: #ffc931;
+$color-yellow-darkest: #edb005;
+$color-rose: #ff8054;
+$color-rose-lightest: #ffbda6;
+$color-rose-light: #ff9b78;
+$color-rose-dark: #ff6631;
+$color-rose-darkest: #ed4005;
 
 /* Font Choices */
 @mixin mx-font-banner-title {
@@ -87,7 +103,7 @@ html {
 body {
     height: 100%;
     width: 100%;
-    font-size: 1em;
+    font-size: 16px;
     line-height: 1.2;
 }
 
@@ -218,7 +234,7 @@ header {
     align-items: flex-end;
     position: absolute;
     right: 1rem;
-    top: 0;
+    top: 1rem;;
     bottom: 0;
     width: 30rem;
     color: white;
@@ -244,6 +260,28 @@ header {
     }
     a {
         text-decoration: none;
+        color: white;
+        background-color: $color-green;
+        padding: .5rem 1rem;
+        margin: 0 3rem 0 0;
+        border-radius: .25rem;
+        transition: all .25s ease-out;
+        text-shadow:
+            0 2px 2px rgba(0,0,0,.14),
+            0 3px 1px rgba(0,0,0,.2),
+            0 1px 5px rgba(0,0,0,.12);
+        box-shadow:
+            0 2px 2px rgba(0,0,0,.14),
+            0 3px 1px rgba(0,0,0,.2),
+            0 1px 5px rgba(0,0,0,.12);
+        @include mx-font-banner-content;
+
+        &:hover {
+            box-shadow:
+                0 2px 4px rgba(0,0,0,.35),
+                0 3px 4px rgba(0,0,0,.2),
+                0 1px 8px rgba(0,0,0,.35);
+        }
     }
 }
 
@@ -429,11 +467,11 @@ ul.footer-listing {
 a.link-more {
     text-decoration: none;
     color: $color-bg-grey-light;
-    border-bottom: .5rem solid $color-primary-blue;
+    border-bottom: .5rem solid $color-blue;
     @include mx-font-h;
 
     span::before {
-        color: $color-primary-blue;
+        color: $color-blue;
         content: "+";
         margin: 0 .5rem 0 0;
     }
@@ -442,7 +480,7 @@ a.link-more {
 a.link-action {
     text-decoration: none;
     color: $color-faded-green;
-    background-color: $color-primary-blue;
+    background-color: $color-blue;
     padding: .5rem 1rem;
     border-radius: .25rem;
     transition: all .25s ease-out;

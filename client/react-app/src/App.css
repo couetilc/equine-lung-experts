@@ -1,6 +1,7 @@
 /* App Dimensions */
-/* Color Palette */
-/* New Palette */
+/* UI Palette */
+/* Main Palette */
+/* Alt Palette */
 /* Font Choices */
 /* Desktop Styles */
 html {
@@ -9,7 +10,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-size: 1em;
+  font-size: 16px;
   line-height: 1.2; }
 
 h1 {
@@ -138,7 +139,7 @@ header {
   align-items: flex-end;
   position: absolute;
   right: 1rem;
-  top: 0;
+  top: 1rem;
   bottom: 0;
   width: 30rem;
   color: white; }
@@ -166,7 +167,21 @@ header {
     font-weight: 400;
     font-family: Verdana, sans-serif; }
   #home-banner-message a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: white;
+    background-color: #40ac47;
+    padding: .5rem 1rem;
+    margin: 0 3rem 0 0;
+    border-radius: .25rem;
+    transition: all .25s ease-out;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.12);
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    font-family: Verdana, sans-serif; }
+    #home-banner-message a:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35), 0 3px 4px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.35); }
 
 #content {
   background-color: white;
@@ -336,20 +351,20 @@ ul.footer-listing {
 a.link-more {
   text-decoration: none;
   color: #333333;
-  border-bottom: 0.5rem solid #4790C1;
+  border-bottom: 0.5rem solid #4791c1;
   font-style: normal;
   font-variant: normal;
   font-weight: 700;
   font-family: Verdana, sans-serif; }
   a.link-more span::before {
-    color: #4790C1;
+    color: #4791c1;
     content: "+";
     margin: 0 .5rem 0 0; }
 
 a.link-action {
   text-decoration: none;
   color: #EDF5EE;
-  background-color: #4790C1;
+  background-color: #4791c1;
   padding: .5rem 1rem;
   border-radius: .25rem;
   transition: all .25s ease-out;

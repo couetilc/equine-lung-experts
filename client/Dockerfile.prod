@@ -12,7 +12,7 @@ COPY react-app/package.json $HOME
 RUN npm install --silent
 
 COPY react-app/ $HOME
-RUN yarn build
+RUN npm run build
 
 # production environment
 FROM nginx:alpine
