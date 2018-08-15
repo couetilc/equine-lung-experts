@@ -15,7 +15,7 @@ render() {
 class HomePage extends Component {
     render() {
         return (
-        <div className="site-page">
+        <div id="site-page">
             <Header srcLogo={ logoWordmark } />
             <MenuBar />
             <HomeBanner />
@@ -63,7 +63,7 @@ class HomeBanner extends Component {
         this.state = { default: {
             titleA: "BREATH EASIER",
             titleB: "MOVE FASTER",
-            content: "Respiratory diseases cause poor performance in racing, sport and recreational horses. Through testing and diagnostic services, the veterinary scintists at Equine Lung Experts will help you solve respiratory disease caused by health or environmental exposures.",
+            content: "Respiratory diseases cause poor performance in racing, sport and recreational horses. Through testing and diagnostic services, the veterinary scientists at Equine Lung Experts will help you solve respiratory disease caused by health or environmental exposures.",
             action: {
                 link: "#",
                 text: "Learn More ->"
@@ -128,7 +128,7 @@ class ServiceSummary extends Component {
                 },
             },
             summaryEval: {
-                title: "Environmental and Exposure Counseling",
+                title: "Environmental Exposure Counseling",
                 content: "Our experts can examine your horse environment to identify potential causes of XXXX and recommend potential interventions and treatments.",
                 action: {
                     link: "#",
@@ -144,7 +144,7 @@ class ServiceSummary extends Component {
 
     render() {
         return (
-        <section id="services-summary">
+        <section id="service-summary">
             <ServiceItem { ...this.state.default.summaryBalf } />
             <ServiceItem { ...this.state.default.summaryEval } />
         </section>);
@@ -271,7 +271,7 @@ class Bio extends Component {
     render() {
         return (
         <div className={ this.state.classes }>
-            <img src={ this.state.image } />
+            <img src={ this.state.image } alt="One of our Equine Experts" />
             <div>
                 <h1>{ this.state.name }</h1>
                 <h2>{ this.state.qualifications }</h2>
@@ -363,8 +363,8 @@ class Banner extends Component {
 
     render() {
         return (
-        <section className='home-banner'>
-            <div className='banner-message'>
+        <section id="home-banner" className='banner'>
+            <div id="home-banner-message" className='banner-message'>
                 <h1>
                     <span className="title-a">{ this.state.titleA }</span>
                     <span className="title-b">{ this.state.titleB }</span>

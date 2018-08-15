@@ -13,4 +13,4 @@ COPY react-app/ $HOME
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
