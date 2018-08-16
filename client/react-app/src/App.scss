@@ -312,7 +312,7 @@ header {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        padding: 0rem 1.5rem;
+        padding: 0rem 1rem;
 
         h3 {
             text-align: center;
@@ -337,12 +337,15 @@ header {
 .bio-showcase {
     display: flex;
     flex-flow: row nowrap;
+    width: 100%;
     margin: 1.25rem 0rem;
 
     .bio {
+        flex: 1 0 auto;
         display: flex;
         flex-flow: row nowrap;
         margin: 0rem 1rem;
+        max-width: 50%;
 
         img {
             object-fit: contain;
@@ -479,6 +482,7 @@ a.link-more {
 
 a.link-action {
     text-decoration: none;
+    width: max-content;
     color: $color-faded-green;
     background-color: $color-blue;
     padding: .5rem 1rem;
@@ -503,14 +507,89 @@ a.link-action {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 991px) {
-    /* large tablet */
+@media all and (max-width: 960px) {
+    h1 {
+        font-size: 2.375rem;
+        margin: 1rem 1rem .5rem 1rem;
+    }
+
+    h2 {
+        font-size: 2.375rem;
+        margin: 1rem 1rem .5rem 1rem;
+        border-bottom: .125rem solid $color-bg-grey-light;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        margin: 1.5rem 1rem 1rem 1rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+        margin: .5rem 1rem 1rem 1rem;
+        line-height: 2rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+        margin: .5rem 1rem;
+    }
+
+    #home-banner {
+        background-position: right;
+    }
+
+    #service-summary {
+        .summary-item {
+            padding: 0rem;
+
+            p {
+                min-height: 12rem;
+            }
+            a {
+                font-size: 1.75rem;
+                margin: .5rem 0;
+            }
+        }
+    }
+
+    .bio-showcase {
+        flex-flow: column nowrap;
+
+        .bio {
+            margin: .5rem 1rem;
+            max-width: 75%;
+
+            h1 {
+                font-size: 1.25rem;
+            }
+            h2, p, a { 
+                font-size: 1.125rem;
+            }
+        }
+
+        .bio-ltr {
+            align-self: flex-start;
+        }
+        .bio-rtl {
+            align-self: flex-end;
+        }
+    }
 }
 
-@media screen and (max-width: 767px) {
-    /* medium tablet */
+@media all and (max-width: 760px) {
 }
 
-@media screen and (max-width: 479px) {
-    /* phone */
+@media all and (max-width: 480px) {
+}
+
+@media all and (max-width: 320px) {
 }

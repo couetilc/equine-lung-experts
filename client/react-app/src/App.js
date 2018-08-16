@@ -3,7 +3,7 @@ import './App.css';
 
 import logoWordmark from './assets/main-logo-breath.png';
 import picLaurent from './assets/picture-laurent-purple-ltr.png';
-import picKathleen from './assets/picture-kathleen-blue-rtl.png';
+import picKathleen from './assets/picture-kathleen-orange-rtl.png';
 
 class App extends Component {
 render() {
@@ -115,7 +115,7 @@ class ServiceSummary extends Component {
         super(props);
         this.state = { default: {
             summaryBalf: {
-                title: "BALF Interpretation + Diagnostic Reporting",
+                title: "BALF Interpretation and  Diagnostics",
                 content: "Submit a sample and we will return a report describing the microscopic appearance of cytology including cellularity, differential cell count, mucus characteristics, and overall cytologic interpretation. When appropriate, comments regarding etiology will be provided.",
                 action: {
                     link: "#",
@@ -234,7 +234,8 @@ class FooterListing extends Component {
     }
 
     renderAllLinks() {
-        return this.state.links.map(link => <ListLink {...link} />);
+        return this.state.links
+            .map((link, idx) => <ListLink key={idx} {...link} />);
     }
 
     render() {
