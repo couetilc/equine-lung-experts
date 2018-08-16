@@ -164,7 +164,7 @@ class PeopleSummary extends Component {
             bioKathleen: {
                 name: "Dr. Kathleen Ivester",
                 image: picKathleen,
-                qualifications: "DVM, PhD, Diplomate XXXX",
+                qualifications: "DVM, PhD, Diplomate ACVIM",
                 content: "Dr. Ivester is an equine research scientist at Purdue University. A boarded equine surgeon, she bridges research and practice with field research investigating the links between environmental factors, viruses, and bacteria to equine respiratory health and performance.",
                 link: "#",
                 rtl: true
