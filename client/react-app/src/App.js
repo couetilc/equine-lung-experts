@@ -91,7 +91,6 @@ class HomeContent extends Component {
             <Tagline { ...this.state.default.tagline } />
             <ServiceSummary />
             <PeopleSummary />
-            <Contact />
         </main>);
     }
 }
@@ -182,18 +181,6 @@ class PeopleSummary extends Component {
                 <Bio { ...this.state.default.bioLaurent } />
                 <Bio { ...this.state.default.bioKathleen } />
             </div>
-        </section>);
-    }
-}
-
-class Contact extends Component {
-    render() {
-        return (
-        <section id="contact">
-            <form>
-                <button id="btn-contact">Contact Us<span></span></button>
-                <input />
-            </form>
         </section>);
     }
 }
