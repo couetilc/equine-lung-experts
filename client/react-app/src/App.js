@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import logoWordmark from './assets/main-logo-breath.png';
-import picLaurent from './assets/picture-laurent-green-ltr.png';
+import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-blue-rtl.png';
 
 class App extends Component {
