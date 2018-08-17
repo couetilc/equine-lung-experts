@@ -120,11 +120,7 @@ class ServiceSummary extends Component {
                 action: {
                     link: "#",
                     text: "Submit Sample"
-                },
-                more: {
-                    link: "#",
-                    text: "Learn More"
-                },
+                }
             },
             summaryEval: {
                 title: "Environmental Exposure Counseling",
@@ -132,11 +128,7 @@ class ServiceSummary extends Component {
                 action: {
                     link: "#",
                     text: "Schedule Evaluation"
-                },
-                more: {
-                    link: "#",
-                    text: "Learn More"
-                },
+                }
             }
         }};
     }
@@ -282,7 +274,6 @@ class ServiceItem extends Component {
             <h3>{ this.state.title }</h3>
             <LinkAction { ...this.state.action } />
             <p>{ this.state.content }</p>
-            <LinkMore { ...this.state.more } />
         </div>);
     }
 }
