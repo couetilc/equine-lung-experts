@@ -176,7 +176,7 @@ header {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: flex-end;
     background-color: $color-bg-grey-dark;
 
     > img{
@@ -592,4 +592,11 @@ a.link-action {
 }
 
 @media all and (max-width: 320px) {
+    header {
+        height: $height-header * .5;
+        img {
+            height: $height-header * .5;
+            flex: 0 1 40px;
+        }
+    }
 }

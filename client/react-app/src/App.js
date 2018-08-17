@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import logoWordmark from './assets/main-logo-breath.png';
+import logoMini from './assets/logo-breath-mini-110w.png';
+import logoSmall from './assets/logo-breath-small-360w.png';
+import logoMedium from './assets/logo-breath-main-480w.png';
+import logoBig from './assets/logo-breath-main-680w.png';
 import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-orange-rtl.png';
 
@@ -16,7 +19,7 @@ class HomePage extends Component {
     render() {
         return (
         <div id="site-page">
-            <Header srcLogo={ logoWordmark } />
+            <Header />
             <MenuBar />
             <HomeBanner />
             <HomeContent />
@@ -28,16 +31,31 @@ class HomePage extends Component {
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = { ...props };
+        this.state = { 
+            img: { 
+                srcset: `
+                    ${logoMini} 110w, 
+                    ${logoSmall} 360w, 
+                    ${logoMedium} 480w, 
+                    ${logoBig} 680w`,
+                sizes: `
+                    (max-width: 320px) 110px,
+                    (max-width: 1024px) 450px,
+                    680px`
+        }};
     }
 
     render() {
         return (
         <header>
-            <img className='header-logo-wordmark'
-                src={ this.state.srcLogo }
+            <picture>
+            <source srcset={logoMini} media="(max-width: 320px)" />
+            <source srcset={logoSmall} media="(max-width: 480px)" />
+            <img className='header-logo-wordmark' 
+                src={logoMedium} 
                 alt='Logo for Equine Lung Experts'
             />
+            </picture>
         </header>);
     }
 }

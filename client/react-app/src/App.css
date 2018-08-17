@@ -89,7 +89,7 @@ header {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-end;
   background-color: #2B2B2B; }
 
 #menu-bar {
@@ -426,3 +426,10 @@ a.link-action {
       align-self: flex-start; }
     .bio-showcase .bio-rtl {
       align-self: flex-end; } }
+
+@media all and (max-width: 320px) {
+  header {
+    height: 3.125rem; }
+    header img {
+      height: 3.125rem;
+      flex: 0 1 40px; } }
