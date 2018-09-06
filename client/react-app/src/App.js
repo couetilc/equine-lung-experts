@@ -9,18 +9,19 @@ import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-orange-rtl.png';
 
 class App extends Component {
-render() {
+    render() {
         return (
             <HomePage />
         );
     }
 }
+
 class HomePage extends Component {
     render() {
         return (
         <div id="site-page">
             <Header />
-            <MenuBar />
+            <NavMobile />
             <HomeBanner />
             <HomeContent />
             <Footer />
@@ -29,28 +30,12 @@ class HomePage extends Component {
 }
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            img: { 
-                srcset: `
-                    ${logoMini} 110w, 
-                    ${logoSmall} 360w, 
-                    ${logoMedium} 480w, 
-                    ${logoBig} 680w`,
-                sizes: `
-                    (max-width: 320px) 110px,
-                    (max-width: 1024px) 450px,
-                    680px`
-        }};
-    }
-
     render() {
         return (
         <header>
             <picture>
-            <source srcset={logoMini} media="(max-width: 320px)" />
-            <source srcset={logoSmall} media="(max-width: 480px)" />
+            <source srcSet={logoMini} media="(max-width: 320px)" />
+            <source srcSet={logoSmall} media="(max-width: 480px)" />
             <img className='header-logo-wordmark' 
                 src={logoMedium} 
                 alt='Logo for Equine Lung Experts'
@@ -60,18 +45,34 @@ class Header extends Component {
     }
 }
 
-class MenuBar extends Component {
+class NavMobile extends Component {
     render() {
-        return(
+        return (
         <nav id='menu-bar'>
-            <ul>
-                <ListLink text='Services' link='#' />
-                <ListLink text='About Us' link='#' />
-                <ListLink text='Submit a Sample' link='#' />
-                <ListLink text='Contact Us' link='#' />
-                <ListLink text='Resources and Articles' link='#' />
-            </ul>
+            <Menu />
         </nav>);
+    }
+}
+
+class NavDesktop extends Component {
+    render() {
+        return (
+        <nav>
+            <Menu />
+        </nav>);
+    }
+}
+
+class Menu extends Component {
+    render() {
+        return (
+        <ul>
+            <ListLink text='Services' link='#' />
+            <ListLink text='About Us' link='#' />
+            <ListLink text='Submit a Sample' link='#' />
+            <ListLink text='Contact Us' link='#' />
+            <ListLink text='Resources and Articles' link='#' />
+        </ul>);
     }
 }
 
@@ -81,7 +82,7 @@ class HomeBanner extends Component {
         this.state = { default: {
             titleA: "BREATH EASIER",
             titleB: "MOVE FASTER",
-            content: "Respiratory diseases cause poor performance in racing, sport and recreational horses. Through testing and diagnostic services, the veterinary scientists at Equine Lung Experts will help you solve respiratory disease caused by health or environmental exposures.",
+            content: "Respiratory diseases cause coughing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
             action: {
                 link: "#",
                 text: "LEARN MORE"
@@ -99,7 +100,7 @@ class HomeContent extends Component {
         super(props);
         this.state = { default: { tagline: {
             title: "We solve respiratory problems.",
-            content: "Local diagnostic labs (even referral practices) don't have the specialized knowledge in equine pulmonology to do a proper diagnosis of respiratory diseases. As leading specialists in horse asthma (heaves, RAO, IAD, COPD, and chronic bronchitis), exercise-induced pulmonary hemorrhage (EIPH or epistaxis), and other respiratory diseases affecting performance, we provide in-depth evaluations of pulmonary health and risk factors."
+            content: "Veterinary diagnostic laboratories don't have the specialized knowledge in equine pulmonology to accurately diagnose respiratory diseases based on bronchoalveolar lavage fluid cytology samples. As leading specialists in horse asthma (heaves, RAO, IAD, COPD, and chronic bronchitis), exercise-induced pulmonary hemorrhage (EIPH or epistaxis), and other respiratory diseases affecting performance, we provide in-depth evaluations of pulmonary health and risk factors."
         }}};
     }
 
@@ -142,7 +143,7 @@ class ServiceSummary extends Component {
             },
             summaryEval: {
                 title: "Environmental Exposure Counseling",
-                content: "Our experts can examine your horse environment to identify potential causes of XXXX and recommend potential interventions and treatments.",
+                content: "Our experts can examine your horse's environment, measure stall or barn ventilation, and sample airborned irritants to identify potential causes of equine asthma and recommend appropriate interventions and treatments.",
                 action: {
                     link: "#",
                     text: "Schedule Evaluation"
@@ -174,7 +175,7 @@ class PeopleSummary extends Component {
             bioKathleen: {
                 name: "Dr. Kathleen Ivester",
                 image: picKathleen,
-                qualifications: "DVM, PhD, Diplomate ACVIM",
+                qualifications: "DVM, PhD, Diplomate ACVS",
                 content: "Dr. Ivester is an equine research scientist at Purdue University. A boarded equine surgeon, she bridges research and practice with field research investigating the links between environmental factors, viruses, and bacteria to equine respiratory health and performance.",
                 link: "#",
                 rtl: true
@@ -296,19 +297,11 @@ class ServiceItem extends Component {
     }
 }
 
-class LinkAction extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { ...props };
-    }
-
-    render() {
-        return (
-        <a className="link-action" href={ this.state.link }>
-            <span>{ this.state.text }</span>
-        </a>);
-    }
-}
+const LinkAction = props => (
+    <a className="link-action" href={ props.link }>
+        <span>{ props.text }</span>
+    </a>
+);
 
 class LinkMore extends Component {
     constructor(props) {

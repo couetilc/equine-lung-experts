@@ -2,7 +2,7 @@
 $width-page: 64rem;
 $height-header: 6.25rem;
 $height-menubar: 2rem;
-$height-banner: 25rem;
+$height-banner: 27rem;
 
 /* UI Palette */
 $color-black: #222222;
@@ -79,7 +79,7 @@ $color-rose-darkest: #ed4005;
 @mixin mx-font-ui {
     font-style: normal;
     font-variant: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-family: Helvetica, Arial, system-ui, sans-serif;
 }
 @mixin mx-font-content {
@@ -110,7 +110,7 @@ body {
 h1 {
     color: $color-green;
     font-size: 2.5rem;
-    margin: 2rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     @include mx-font-h;
 }
 
@@ -183,12 +183,15 @@ header {
     }
 }
 
-#menu-bar {
+nav {
     height: $height-menubar;
     width: 100%;
     background-color: $color-bg-grey-light;
     @include mx-font-ui;
 
+    > div {
+        display: none;
+    }
     ul {
         height: inherit;
         width: inherit;
@@ -230,7 +233,7 @@ header {
 
 #home-banner-message {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column nowrap; 
     align-items: flex-end;
     position: absolute;
     right: 1rem;
@@ -303,7 +306,7 @@ header {
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
-    justify-cotent: space-around;
+    justify-content: space-around;
     padding: 0rem 1rem;
 
     .summary-item {
@@ -318,7 +321,7 @@ header {
             text-align: center;
         }
         p {
-            text-align: justify;
+            text-align: center;
             min-height: 10rem;
         }
         a {
@@ -444,6 +447,7 @@ ul.footer-listing {
     list-style: none;
     padding: 0 0 0 2.5rem;
     margin: 1rem 0;
+    width: 25%;
 
     li {
         margin: .5rem 0;
@@ -461,10 +465,6 @@ ul.footer-listing {
         font-size: .875rem;
         @include mx-font-content;
     }
-}
-
-.col-4 {
-    width: 25%;
 }
 
 a.link-more {
@@ -504,6 +504,14 @@ a.link-action {
             0 3px 4px rgba(0,0,0,.2),
             0 1px 8px rgba(0,0,0,.35);
     }
+}
+
+.nodisplay {
+    display: none;
+}
+
+.hamburger::after {
+    content: "☰";
 }
 
 /* Responsive Design */
@@ -586,17 +594,137 @@ a.link-action {
 }
 
 @media all and (max-width: 760px) {
+    nav {
+        height: auto;
+        ul {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        ul.nodisplay-mobile {
+        /*    display: none;*/
+        }
+        ul li {
+            font-size: 1.5rem;
+            width: 100%;
+            background-color: $color-bg-grey-light;
+        }
+        a:hover {
+            border-bottom: none;
+            color: $color-green;
+        }
+    }
+
+    #service-summary {
+        flex-flow: column nowrap;
+
+        .summary-item {
+            width: 100%;
+
+            p {
+                min-height: auto;
+            }
+            a {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .bio-showcase {
+        flex-flow: column nowrap;
+
+        .bio {
+            flex-flow: row nowrap;           
+            max-width: 100%;
+            justify-content: center;
+
+            img {
+                margin: 0 1rem 1rem 1rem;
+            }
+        }
+    }
 }
 
 @media all and (max-width: 480px) {
+    h1 {
+        font-size: 2.25rem;
+        margin: .5rem 0;
+    }
+    h2 {
+    }
+    h3 {
+    }
+    h5 {
+        margin: .5rem 0rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    h6 {
+    }
+
+    header {
+        height: $height-header * .6;
+    }
+
+
+
+    #home-banner {
+        /* change background-image ? */
+        height: auto;
+    }
+
+    #home-banner-message {
+        position: static;
+        width: 100%;
+        align-items: center;
+
+        h1 {
+            margin: .5rem 0;
+        }
+        p {
+            box-sizing: border-box;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 .5rem 0;
+            padding: 0 .25rem;
+        }
+        a {
+            margin: .5rem 0;
+        }
+    }
+    
+    .bio-showcase {
+        flex-flow: column nowrap;
+
+        .bio {
+            flex-flow: row wrap;           
+            max-width: 100%;
+            justify-content: center;
+
+            img {
+                margin: 0 1rem 1rem 1rem;
+            }
+        }
+
+        .bio-rtl {
+            img { order: 0; }
+        }
+    }
+    
+    footer {
+        flex-flow: column nowrap;
+    }
+
+    ul.footer-listing {
+        width: auto;
+        padding: 0 0 0 1rem;
+        margin: .5rem 0;
+    }
 }
 
 @media all and (max-width: 320px) {
-    header {
-        height: $height-header * .5;
-        img {
-            height: $height-header * .5;
-            flex: 0 1 40px;
+    #home-banner-message {
+        h1 {
+            font-size: 2.2rem;
         }
     }
 }
