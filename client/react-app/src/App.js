@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashLink as Link} from 'react-router-hash-link';
 import './App.css';
 
 import logoMini from './assets/logo-breath-mini-110w.png';
@@ -11,20 +13,54 @@ import picKathleen from './assets/picture-kathleen-orange-rtl.png';
 class App extends Component {
     render() {
         return (
-            <HomePage />
+            <BrowserRouter>
+                <MainPage />
+            </BrowserRouter>
         );
     }
 }
 
-class HomePage extends Component {
+class MainPage extends Component {
     render() {
         return (
         <div id="site-page">
             <Header />
             <NavMobile />
-            <HomeBanner />
-            <HomeContent />
+            <Switch>
+                <Route path='/submitsample' component={SubmitSample} />
+                <Route path='/environmentalconsulting' component={EnvironmentalConsulting} />
+                <Route path='/' component={Home} />
+            </Switch>
             <Footer />
+        </div>);
+    }
+}
+
+class Home extends Component {
+    render() {
+        return ([
+            <HomeBanner key="banner" />,
+            <HomeContent key="content" />
+        ]);
+    }
+}
+
+class SubmitSample extends Component {
+    render() {
+        return (
+        <div>
+            <h1>Submit a Sample</h1>
+            <p>information about submitting a sample</p>
+        </div>);
+    }
+}
+
+class EnvironmentalConsulting extends Component {
+    render() {
+        return (
+        <div>
+            <h1>Environmental Consulting</h1>
+            <p>information about consulting services</p>
         </div>);
     }
 }
@@ -33,14 +69,16 @@ class Header extends Component {
     render() {
         return (
         <header>
-            <picture>
-            <source srcSet={logoMini} media="(max-width: 320px)" />
-            <source srcSet={logoSmall} media="(max-width: 480px)" />
-            <img className='header-logo-wordmark' 
-                src={logoMedium} 
-                alt='Logo for Equine Lung Experts'
-            />
-            </picture>
+            <Link to='/'>
+                <picture>
+                <source srcSet={logoMini} media="(max-width: 320px)" />
+                <source srcSet={logoSmall} media="(max-width: 480px)" />
+                <img className='header-logo-wordmark' 
+                    src={logoMedium} 
+                    alt='Logo for Equine Lung Experts'
+                />
+                </picture>
+            </Link>
         </header>);
     }
 }
@@ -67,12 +105,24 @@ class Menu extends Component {
     render() {
         return (
         <ul>
-            <ListLink text='Services' link='#' />
-            <ListLink text='About Us' link='#' />
-            <ListLink text='Submit a Sample' link='#' />
-            <ListLink text='Environmental Consulting' link='#' />
-            <ListLink text='Contact Us' link='#' />
-            <ListLink text='Resources/Articles' link='#' />
+            <li>
+                <Link to='/#service-summary'>Services</Link>
+            </li>
+            <li>
+                <Link to='/#people-summary'>About Us</Link>
+            </li>
+            <li>
+                <Link to='/submitsample'>Submit a Sample</Link>
+            </li>
+            <li>
+                <Link to='/environmentalconsulting'>Environmental Consulting</Link>
+            </li>
+            <li>
+                <Link to='#'>Contact Us</Link>
+            </li>
+            <li>
+                <Link to='#'>Resources/Articles</Link>
+            </li>
         </ul>);
     }
 }
@@ -83,7 +133,7 @@ class HomeBanner extends Component {
         this.state = { default: {
             titleA: "BREATH EASIER",
             titleB: "MOVE FASTER",
-            content: "Respiratory diseases cause coughing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
+            content: "Respiratory diseases cause youghing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
             action: {
                 link: "#",
                 text: "LEARN MORE"
@@ -327,7 +377,7 @@ class ListLink extends Component {
     render() {
         return (
         <li>
-            <a href={ this.state.link }>{ this.state.text }</a>
+            <Link to={ this.state.link }>{ this.state.text }</Link>
         </li>);
     }
 }
