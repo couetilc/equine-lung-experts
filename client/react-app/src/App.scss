@@ -340,6 +340,7 @@ nav {
 .bio-showcase {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
     width: 100%;
     margin: 1.25rem 0rem;
 
@@ -348,7 +349,7 @@ nav {
         display: flex;
         flex-flow: row nowrap;
         margin: 0rem 1rem;
-        max-width: 50%;
+        max-width: 45%;
 
         img {
             object-fit: contain;
@@ -596,6 +597,7 @@ a.link-action {
 @media all and (max-width: 760px) {
     nav {
         height: auto;
+
         ul {
             display: flex;
             flex-flow: column nowrap;
@@ -634,7 +636,7 @@ a.link-action {
 
         .bio {
             flex-flow: row nowrap;           
-            max-width: 100%;
+            max-width: 36rem;
             justify-content: center;
 
             img {
@@ -663,9 +665,11 @@ a.link-action {
 
     header {
         height: $height-header * .6;
+
+        img {
+            max-width: 100%;
+        }
     }
-
-
 
     #home-banner {
         /* change background-image ? */
@@ -679,6 +683,7 @@ a.link-action {
 
         h1 {
             margin: .5rem 0;
+            font-size: 2.25rem;
         }
         p {
             box-sizing: border-box;
@@ -703,10 +708,21 @@ a.link-action {
             img {
                 margin: 0 1rem 1rem 1rem;
             }
+            h2 {
+                border-bottom: none;
+            }
+        }
+
+        .bio-ltr {
+            justify-content: flex-start;
         }
 
         .bio-rtl {
-            img { order: 0; }
+            justify-content: flex-end;
+
+            img { 
+                order: 0; 
+            }
         }
     }
     

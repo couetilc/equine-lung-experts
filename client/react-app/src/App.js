@@ -70,8 +70,9 @@ class Menu extends Component {
             <ListLink text='Services' link='#' />
             <ListLink text='About Us' link='#' />
             <ListLink text='Submit a Sample' link='#' />
+            <ListLink text='Environmental Consulting' link='#' />
             <ListLink text='Contact Us' link='#' />
-            <ListLink text='Resources and Articles' link='#' />
+            <ListLink text='Resources/Articles' link='#' />
         </ul>);
     }
 }
@@ -169,15 +170,15 @@ class PeopleSummary extends Component {
                 name: "Dr. Laurent Couetil",
                 image: picLaurent,
                 qualifications: "DVM, PhD, Diplomate ACVIM-LAIM",
-                content: "Dr. Couetil is a Professor of Large Animal Medicine at Purdue University, Directory of the Equine Sports Medicine Center, and Director of Equine Research. A former practicing equine veterinarian, he has published extensively on respiratory diseases.",
-                link: "#"
+                content: "Dr. Couetil is a Professor of Large Animal Medicine at Purdue University, Director of the Equine Sports Medicine Center, and Director of Equine Research. A former practicing equine veterinarian, he has published extensively on respiratory diseases.",
+                link: "https://vet.purdue.edu/directory/person.php?id=12"
             },
             bioKathleen: {
                 name: "Dr. Kathleen Ivester",
                 image: picKathleen,
                 qualifications: "DVM, PhD, Diplomate ACVS",
                 content: "Dr. Ivester is an equine research scientist at Purdue University. A boarded equine surgeon, she bridges research and practice with field research investigating the links between environmental factors, viruses, and bacteria to equine respiratory health and performance.",
-                link: "#",
+                link: "https://www.vet.purdue.edu/directory/person.php?id=279",
                 rtl: true
             }
         }};
