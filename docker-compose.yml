@@ -31,4 +31,4 @@ services:
         env_file: ./server/.env
         environment:
             NODE_ENV: development
-            PORT: 7777
+            PORT: 77777

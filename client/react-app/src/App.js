@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { HashLink as Link} from 'react-router-hash-link';
+import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
 import './App.css';
 
 import logoMini from './assets/logo-breath-mini-110w.png';
 import logoSmall from './assets/logo-breath-small-360w.png';
 import logoMedium from './assets/logo-breath-main-480w.png';
 import logoBig from './assets/logo-breath-main-680w.png';
+import homeIcon from './assets/home_white_18x18.png';
+import imgBalf from './assets/bal-procedure.png';
+import imgCytology from './assets/bal-cytology.png';
 import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-orange-rtl.png';
 
@@ -26,11 +29,14 @@ class MainPage extends Component {
         <div id="site-page">
             <Header />
             <NavMobile />
+
             <Switch>
-                <Route path='/submitsample' component={SubmitSample} />
+                <Route exact path='/' component={Home} />
+                <Route path='/balfsample' component={BalfSample} />
                 <Route path='/environmentalconsulting' component={EnvironmentalConsulting} />
-                <Route path='/' component={Home} />
+                <Route component={PageNotFound} />
             </Switch>
+
             <Footer />
         </div>);
     }
@@ -39,18 +45,92 @@ class MainPage extends Component {
 class Home extends Component {
     render() {
         return ([
-            <HomeBanner key="banner" />,
-            <HomeContent key="content" />
+            <HomeBanner key="homebanner" />,
+            <HomeContent key="homecontent" />
         ]);
     }
 }
 
-class SubmitSample extends Component {
+class BalfSample extends Component {
     render() {
         return (
-        <div>
-            <h1>Submit a Sample</h1>
-            <p>information about submitting a sample</p>
+        <div id="balf-sample-page" className="blank-page">
+
+            <div id="balf-tagline" className="tagline">
+                <h1>BAL Cytology Services</h1>
+                <h5>Equine Lung Experts is pleased to offer bronchoalveolar lavage (BAL) cytology services to veterinarians.  We process bronchoalveolar lavage fluid (BALF) samples and provide cytology interpretation to diagnose respiratory diseases in your equine patients.</h5>
+                <a href="/#people-summary">Meet the experts →</a>
+
+                <div className="table-of-contents">
+                    <span>Key Information</span>
+                    <a href="#balf-what-we-do">What We Do</a>
+                    <a href="#balf-preparing-sample">Preparing Samples</a>
+                    <a href="#balf-shipping-sample">Shipping Samples</a>
+                    <a href="#balf-cost-sample">Pricing</a>
+                </div>
+            </div>
+
+            <div id="balf-what-we-do">
+                <h3>What We Do</h3>
+                <span>BALF samples submitted in tubes containing EDTA are processed using a centrifuge. Cytospin and smear slides are stained using Wright’s stain (and additional stains as deemed appropriate).</span>
+                <ul>
+                    <li>A report is provided describing microscopic appearance of the submission including cellularity, differential cell count (based on minimum 400 cells), mucus characteristics, and overall cytologic interpretation. When appropriate, comments regarding etiology are provided.</li>
+                    <li>Cytology interpretation will be reported within 1-2 working days after receipt of the sample.</li>
+                </ul>
+                <span>As part of the service, we offer a free phone consultation (up to 15 min) for each horse sample submitted to Equine Lung Experts. Call Dr. Laurent Couetil’s mobile at (765) 427-5617.</span>
+            </div>
+
+            <div id="balf-preparing-sample">
+                <div>
+                    <h3>Preparing a Sample</h3>
+                    <ol>
+                        <li>Pool BALF aliquots in one chilled container immediately after collection, gently homogenize the fluid sample by swirling the flask.</li>
+                        <li>Pour one aliquot (minimum 3 ml – maximum 10 ml) in a plastic tube containing EDTA (e.g. vacutainer).</li>
+                        <li>Store BALF sample immediately at 2-8 °C until shipped.</li>
+                        <li>Pour second aliquot (10 ml) and centrifuge at 300 g for 10 minutes, pour off supernatant and transfer cell pellet on a slide to make a smear.</li>
+                        <li>Prepare at least 2 smear slides and dry promptly.</li>
+                        <li>Print and complete "the Cytology Sample Submission Form". Insert into package along with the sample, slides, and payment.</li>
+                    </ol>
+                </div>
+
+                <figure>
+                    <img src={imgBalf} />
+                    <figcaption>Dr. Ivester retrieving a BALF sample from a patient.</figcaption>
+                    <img src={imgCytology} />
+                    <figcaption>BAL cytology samples.</figcaption>
+                </figure>
+            </div>
+
+            <div id="balf-ship-cost-sample">
+                <div id="balf-shipping-sample">
+                    <h3>Shipping a Sample*</h3>
+                    <span>Required Items</span>
+                    <ul>
+                        <li>1 BALF aliquot in EDTA tube (~ 5 ml) on ice pack(s) inside a Styrofoam box</li>
+                        <li>2 air-dried smear slides placed in a small slide box</li>
+                        <li>BALF cytology sample submission form</li>
+                    </ul>
+                    <span>Shipping Address</span>
+                        <ul className="address">
+                        <li>
+                            Purdue University<br />
+                            c/o Dr. Couetil, ELE, LLC.<br />
+                            Room G408, Lynn Hall, 625 Harrison St.<br />
+                            West Lafayette, IN 47907<br />
+                        </li>
+                    </ul>
+                    <div>* <em><u>Ship all samples on-ice overnight,</u> Monday – Thursday. Do not send overnight packages on Fridays or Thursdays before holiday weekends.</em></div>
+                </div>
+
+                <div id="balf-cost-sample">
+                    <h3>Cost for Service</h3>
+                    <span>Fee: $150 per horse.**†</span>
+                    <ul>
+                        <li>** <em>Fee is payable at the time of sample submission or upon receipt of invoice. We accept checks made payable to “Equine Lung Experts, LLC”.</em></li>
+                        <li>† <em>Invoices not paid within thirty (30) days of the invoice date shall be charged a late fee equal to 1.5 % per month of the total unpaid balance.</em></li>
+                    </ul>
+                </div>
+            </div>
         </div>);
     }
 }
@@ -58,11 +138,41 @@ class SubmitSample extends Component {
 class EnvironmentalConsulting extends Component {
     render() {
         return (
-        <div>
-            <h1>Environmental Consulting</h1>
-            <p>information about consulting services</p>
+        <div id="env-consulting-page" className="blank-page">
+            <div id="env-tagline" className="tagline">
+                <h1>Environmental Assessment Services</h1>
+                <h5>Equine Lung Experts is pleased to offer environmental assessment services to veterinarians. We work with veterinarians to objectively assess barn and stall environments, and analyze potential sources of irritant or allergen exposure in horses.</h5>
+            
+                <a href="/#people-summary">Meet the experts →</a>
+
+                <div className="table-of-contents">
+                    <span>Key Information</span>
+                    <a href="#env-what-we-do">What We Do</a>
+                    <a href="#env-request-service">Request Services</a>
+                    <a href="#env-cost-service">Pricing</a>
+                </div>
+            </div>
+
+            <div id="env-what-we-do">
+                <h3>What We Do</h3>
+                <ul>
+                    <li>We sample and quantify airborne irritants and allergens using gravimetric air sampling techniques and real time particulate counters.</li>
+                    <li>We assess dust and allergen sources by testing feedstuff and bedding samples.</li>
+                </ul>
+                <span>The service is tailored to each situation and the goals expressed by the horse’s owner and veterinarian.</span>
+            </div>
+
+            
         </div>);
     }
+}
+
+const PageNotFound = () => {
+    return (
+    <div id="page-404" className="blank-page">
+        <h1>404</h1>
+        <h3>Page Not Found</h3>
+    </div>);
 }
 
 class Header extends Component {
@@ -106,22 +216,25 @@ class Menu extends Component {
         return (
         <ul>
             <li>
-                <Link to='/#service-summary'>Services</Link>
+                <NavLink exact className='home-icon' to='/' activeClassName='selected-home'></NavLink>
             </li>
             <li>
-                <Link to='/#people-summary'>About Us</Link>
+                <NavLink to='/#service-summary' activeClassName='selected'>Services</NavLink>
             </li>
             <li>
-                <Link to='/submitsample'>Submit a Sample</Link>
+                <NavLink to='/#people-summary' activeClassName='selected'>About Us</NavLink>
             </li>
             <li>
-                <Link to='/environmentalconsulting'>Environmental Consulting</Link>
+                <NavLink to='/balfsample' activeClassName='selected'>Submit a Sample</NavLink>
             </li>
             <li>
-                <Link to='#'>Contact Us</Link>
+                <NavLink to='/environmentalconsulting' activeClassName='selected'>Environmental Consulting</NavLink>
             </li>
             <li>
-                <Link to='#'>Resources/Articles</Link>
+                <NavLink to='#' activeClassName='selected'>Contact Us</NavLink>
+            </li>
+            <li>
+                <NavLink to='#' activeClassName='selected'>Resources/Articles</NavLink>
             </li>
         </ul>);
     }
@@ -133,7 +246,7 @@ class HomeBanner extends Component {
         this.state = { default: {
             titleA: "BREATH EASIER",
             titleB: "MOVE FASTER",
-            content: "Respiratory diseases cause youghing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
+            content: "Respiratory diseases cause coughing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
             action: {
                 link: "#",
                 text: "LEARN MORE"
@@ -157,7 +270,7 @@ class HomeContent extends Component {
 
     render() {
         return (
-        <main id="content">
+        <main className="blank-page">
             <Tagline { ...this.state.default.tagline } />
             <ServiceSummary />
             <PeopleSummary />
@@ -173,7 +286,7 @@ class Tagline extends Component {
 
     render() {
         return (
-        <section id="tagline">
+        <section className="tagline">
             <h1>{ this.state.title }</h1>
             <h5>{ this.state.content }</h5>
         </section>);

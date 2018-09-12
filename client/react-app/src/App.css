@@ -111,11 +111,18 @@ nav {
     justify-content: space-around;
     align-items: center; }
   nav li {
-    flex: 1 1 auto;
+    flex: 2 1 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     height: inherit; }
+  nav a.home-icon {
+    flex: 1 1 auto;
+    background-image: url("./assets/home_white_18x18.png");
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; }
   nav a {
     flex: 1 1 auto;
     text-align: center;
@@ -125,16 +132,28 @@ nav {
   nav a:hover {
     box-sizing: border-box;
     border-bottom: 0.125rem solid #40ac47; }
+  nav .selected {
+    color: #40ac47; }
+  nav a.selected-home {
+    background-image: url("./assets/home_green_18x18.png"); }
+
+#page-404 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
 
 #home-banner {
+  background-image: url("./assets/Indiana-Grand-racetrack.png");
+  background-image: linear-gradient(120deg, transparent, #333333), url("./assets/Indiana-Grand-racetrack.png");
+  position: relative; }
+
+.banner {
   width: 100%;
   height: 27rem;
-  background-image: url("./assets/banner-racehorse.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  position: relative; }
+  background-attachment: scroll; }
 
 #home-banner-message {
   display: flex;
@@ -186,8 +205,9 @@ nav {
     #home-banner-message a:hover {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35), 0 3px 4px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.35); }
 
-#content {
+.blank-page {
   background-color: white;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   font-style: normal;
@@ -195,7 +215,7 @@ nav {
   font-weight: 300;
   font-family: Helvetica, Arial, sans-serif; }
 
-#tagline {
+.tagline {
   background-color: #EDF5EE;
   display: flex;
   flex-flow: column nowrap;
@@ -321,6 +341,262 @@ nav {
     font-weight: 300;
     font-family: Helvetica, Arial, system-ui, sans-serif;
     font-size: 1rem; }
+
+#balf-sample-page {
+  display: flex;
+  flex-flow: column nowrap; }
+  #balf-sample-page h2 {
+    font-size: 2.25rem;
+    border-bottom: none;
+    text-decoration: underline; }
+  #balf-sample-page h3 {
+    margin: 1rem 1rem 1rem 1rem; }
+  #balf-sample-page h4 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #2B2B2B; }
+  #balf-sample-page h5 {
+    margin: 0 1rem .5rem 1rem; }
+  #balf-sample-page h6 {
+    margin: 1rem; }
+
+#balf-sample-banner {
+  background-image: url("./assets/bal-procedure.png");
+  height: 20.25rem;
+  width: 48rem;
+  align-self: flex-end; }
+
+.table-of-contents {
+  background-color: #DDE6EC;
+  padding: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  right: 0;
+  width: 250px; }
+  .table-of-contents > span {
+    margin: 0 0 .5rem 0;
+    font-size: 1.5rem;
+    color: #0c6098;
+    width: 100%;
+    border-bottom: 2px solid #2a79ad;
+    font-family: Verdana; }
+  .table-of-contents > a {
+    flex: 0 0 auto;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: .5rem;
+    color: #0f7716;
+    color: #333333; }
+  .table-of-contents > a::before {
+    content: "⟡";
+    content: "➤";
+    font-weight: 400;
+    font-size: 1rem;
+    padding: .5rem;
+    color: #2a79ad; }
+  .table-of-contents > a:hover {
+    color: #2a79ad; }
+
+.table-of-contents-bar {
+  background-color: #DDE6EC;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%; }
+  .table-of-contents-bar > span {
+    margin: 0 0 0 1rem;
+    font-size: 1.5rem;
+    color: #2B2B2B; }
+  .table-of-contents-bar > a {
+    text-decoration: none;
+    font-size: 1.125rem;
+    padding: .5rem;
+    color: #333333; }
+  .table-of-contents-bar > a::before {
+    content: "➤";
+    font-weight: 400;
+    font-size: 1rem;
+    padding: .5rem;
+    color: #4791c1; }
+
+#balf-tagline {
+  flex-flow: column wrap;
+  height: 18rem; }
+  #balf-tagline > h1 {
+    width: 60%; }
+  #balf-tagline > h5 {
+    width: 60%; }
+  #balf-tagline > a {
+    margin: 0rem 1rem;
+    font-size: 1.25rem; }
+  #balf-tagline > div {
+    width: 320px;
+    margin: 1rem 0;
+    /*box-shadow: 1px 1px 4px 2px $color-blue;*/
+    border: 2px solid #4791c1;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Tahoma, sans-serif; }
+
+#balf-what-we-do {
+  display: flex;
+  flex-flow: column nowrap;
+  color: #333333;
+  margin: 0rem 1rem; }
+  #balf-what-we-do span {
+    margin: 0rem 1rem;
+    font-size: 1.25rem; }
+  #balf-what-we-do ul {
+    list-style-type: disc;
+    font-size: 1.25rem; }
+  #balf-what-we-do li {
+    margin: .5rem 4rem; }
+
+#balf-ship-cost-sample {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0rem 1rem; }
+
+#balf-preparing-sample {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0rem 1rem;
+  color: #333333; }
+  #balf-preparing-sample > div {
+    display: flex;
+    flex-flow: column nowrap; }
+  #balf-preparing-sample ol {
+    font-size: 1.25rem;
+    margin: 0rem 2rem 0rem 4rem;
+    list-style-type: decimal; }
+  #balf-preparing-sample li {
+    margin: .5rem 0rem; }
+  #balf-preparing-sample figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem 0rem; }
+  #balf-preparing-sample figcaption {
+    margin: 0rem 1rem 1rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Tahoma, sans-serif;
+    font-style: italic;
+    width: 300px; }
+
+#balf-shipping-sample {
+  color: #333333;
+  flex: 1 1 auto;
+  width: 50%;
+  margin: 0rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  #balf-shipping-sample span {
+    margin: 0rem 1rem .25rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 400; }
+  #balf-shipping-sample ul {
+    font-size: 1.125rem;
+    margin: 0rem 4rem 1rem 4rem;
+    list-style-type: square; }
+  #balf-shipping-sample ul.address {
+    list-style: none; }
+  #balf-shipping-sample > div {
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0rem 2rem 1rem 2rem; }
+  #balf-shipping-sample em {
+    font-style: italic; }
+  #balf-shipping-sample u {
+    text-decoration: underline; }
+
+#balf-cost-sample {
+  flex: 1 1 auto;
+  width: 50%;
+  margin: 0rem 1rem;
+  color: #333333;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  #balf-cost-sample span {
+    font-size: 1.5rem;
+    align-self: center;
+    font-weight: 400;
+    text-decoration: underline;
+    margin: 0rem 0rem 1rem 0rem; }
+  #balf-cost-sample li {
+    margin: .5rem; }
+  #balf-cost-sample em {
+    font-style: italic; }
+  #balf-cost-sample img {
+    flex: 0 0 auto;
+    width: 320px;
+    object-fit: contain;
+    border: 2px solid #0f7716; }
+  #balf-cost-sample figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem 0rem; }
+  #balf-cost-sample figcaption {
+    margin: 0rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Tahoma, sans-serif;
+    font-style: italic;
+    width: 300px; }
+
+#env-consulting-page {
+  display: flex;
+  flex-flow: column nowrap; }
+  #env-consulting-page h1 {
+    font-size: 2.375rem; }
+  #env-consulting-page h2 {
+    font-size: 2.25rem;
+    border-bottom: none;
+    text-decoration: underline; }
+  #env-consulting-page h3 {
+    margin: 1rem 1rem 1rem 1rem; }
+  #env-consulting-page h4 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #2B2B2B; }
+  #env-consulting-page h5 {
+    margin: 0 1rem .5rem 1rem; }
+  #env-consulting-page h6 {
+    margin: 1rem; }
+
+#env-tagline {
+  flex-flow: column wrap;
+  height: 20rem; }
+  #env-tagline > h1 {
+    width: 60%; }
+  #env-tagline > h5 {
+    width: 60%; }
+  #env-tagline > a {
+    margin: 0rem 1rem;
+    font-size: 1.25rem; }
+  #env-tagline > div {
+    width: 320px;
+    margin: 1rem 0;
+    /*box-shadow: 1px 1px 4px 2px $color-blue;*/
+    border: 2px solid #4791c1;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    font-family: Tahoma, sans-serif; }
 
 footer {
   display: flex;
@@ -480,7 +756,6 @@ a.link-action {
     header img {
       max-width: 100%; }
   #home-banner {
-    /* change background-image ? */
     height: auto; }
   #home-banner-message {
     position: static;

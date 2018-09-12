@@ -11,6 +11,7 @@ $color-bg-grey-light: #333333;
 $color-contrast-white: #cacaca;
 $color-contrast-grey: #999999;
 $color-faded-green: #EDF5EE;
+$color-faded-blue: #DDE6EC;
 
 /* Main Palette */
 $color-green: #40ac47;
@@ -201,11 +202,21 @@ nav {
         align-items: center;
     }
     li {
-        flex: 1 1 auto;
+        flex: 2 1 auto;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
         height: inherit;
+    }
+    a.home-icon {
+        flex: 1 1 auto;
+        background-image: url('./assets/home_white_18x18.png');
+        background-size: 18px 18px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+
+
     }
     a {
         flex: 1 1 auto;
@@ -218,17 +229,33 @@ nav {
         box-sizing: border-box;
         border-bottom: .125rem solid $color-green;
     }
+    .selected {
+        color: $color-green;
+    }
+    a.selected-home {
+        background-image: url('./assets/home_green_18x18.png');
+    }
+}
+
+#page-404 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 #home-banner {
+    background-image: url("./assets/Indiana-Grand-racetrack.png");
+    background-image: linear-gradient(120deg, transparent, #333333), url("./assets/Indiana-Grand-racetrack.png");
+    position: relative;
+}
+
+.banner {
     width: 100%;
     height: $height-banner;
-    background-image: url("./assets/banner-racehorse.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    position: relative;
 }
 
 #home-banner-message {
@@ -288,14 +315,15 @@ nav {
     }
 }
 
-#content {
+.blank-page {
     background-color: white;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     @include mx-font-content;
 }
 
-#tagline {
+.tagline {
     background-color: $color-faded-green;
     display: flex;
     flex-flow: column nowrap;
@@ -434,6 +462,324 @@ nav {
         width: 20rem;
         @include mx-font-ui;
         font-size: 1rem;
+    }
+}
+
+#balf-sample-page {
+    display: flex;
+    flex-flow: column nowrap;
+
+    h1 {
+    }
+    h2 {
+        font-size: 2.25rem;
+        border-bottom: none;
+        text-decoration: underline;
+    }
+    h3 {
+        margin: 1rem 1rem 1rem 1rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+        margin: 1rem;
+        color: $color-bg-grey-dark;
+    }
+    h5 {
+        margin: 0 1rem .5rem 1rem;
+    }
+    h6 {
+        margin: 1rem;
+    }
+}
+
+#balf-sample-banner {
+    background-image: url("./assets/bal-procedure.png");
+    height: $height-banner * .75;
+    width: $width-page * .75;
+    align-self: flex-end;
+}
+
+.table-of-contents {
+    background-color: $color-faded-blue;
+    padding: 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    right: 0;
+    width: 250px;
+
+    > span {
+        margin: 0 0 .5rem 0;
+        font-size: 1.5rem;
+        color: $color-blue-darkest;
+        width: 100%;
+        border-bottom: 2px solid $color-blue-dark;
+        font-family: Verdana;
+    }
+    > a {
+        flex: 0 0 auto;
+        font-size: 1.25rem;
+        text-decoration: none;
+        padding: .5rem;
+        color: $color-green-darkest;
+        color: $color-bg-grey-light;
+    }   
+    > a::before {
+        content: "⟡";
+        content: "➤";
+        font-weight: 400;
+        font-size: 1rem;
+        padding: .5rem;
+        color: $color-blue-dark;
+    }
+    > a:hover {
+        color: $color-blue-dark;
+    }
+}
+
+.table-of-contents-bar {
+    background-color: $color-faded-blue;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    > span {
+        margin: 0 0 0 1rem;
+        font-size: 1.5rem;
+        color: $color-bg-grey-dark;
+    }
+    > a {
+        text-decoration: none;
+        font-size: 1.125rem;
+        padding: .5rem;
+        color: $color-bg-grey-light;
+    }
+    > a::before {
+        content: "➤";
+        font-weight: 400;
+        font-size: 1rem;
+        padding: .5rem;
+        color: $color-blue;
+    }
+}
+
+#balf-tagline {
+    flex-flow: column wrap;
+    height: 18rem;
+
+    > h1 {
+        width: 60%;
+    }
+    > h5 {
+        width: 60%;
+    }
+    > a {
+        margin: 0rem 1rem;
+        font-size: 1.25rem;
+    }
+    > div {
+        width: 320px;
+        margin: 1rem 0;
+        /*box-shadow: 1px 1px 4px 2px $color-blue;*/
+        border: 2px solid #4791c1;
+        @include mx-font-content-alt;
+    }
+}
+
+#balf-what-we-do {
+    display: flex;
+    flex-flow: column nowrap;
+    color: $color-bg-grey-light;
+    margin: 0rem 1rem;
+    
+    h3 {
+
+    }
+    span {
+        margin: 0rem 1rem;
+        font-size: 1.25rem;
+    }
+    ul {
+        list-style-type: disc;
+        font-size: 1.25rem;
+    }
+    li {
+        margin: .5rem 4rem;
+    }
+}
+
+#balf-ship-cost-sample {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0rem 1rem;
+}
+
+#balf-preparing-sample {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 0rem 1rem;
+    color: $color-bg-grey-light;
+
+    > div {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    ol {
+        font-size: 1.25rem;
+        margin: 0rem 2rem 0rem 4rem;
+        list-style-type: decimal;
+    }
+    li {
+        margin: .5rem 0rem;
+    }
+    figure {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 1rem 0rem;
+    }
+    figcaption {
+        margin: 0rem 1rem 1rem 1rem;
+        text-align: center;
+        font-size: 1rem;
+        @include mx-font-content-alt;
+        font-style: italic;
+        width: 300px;
+    }
+}
+
+#balf-shipping-sample {
+    color: $color-bg-grey-light;
+    flex: 1 1 auto;
+    width: 50%;
+    margin: 0rem 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    span {
+        margin: 0rem 1rem .25rem 1rem;
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+    ul {
+        font-size: 1.125rem;
+        margin: 0rem 4rem 1rem 4rem;
+        list-style-type: square;
+    }
+    ul.address {
+        list-style: none;
+    }
+    > div {
+        font-weight: 400;
+        font-size: 1.25rem;
+        margin: 0rem 2rem 1rem 2rem;
+    }
+    em {
+        font-style: italic;
+    }
+    u {
+        text-decoration: underline;
+    }
+
+}
+
+#balf-cost-sample {
+    flex: 1 1 auto;
+    width: 50%;
+    margin: 0rem 1rem;
+    color: $color-bg-grey-light;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    span {
+        font-size: 1.5rem;
+        align-self: center;
+        font-weight: 400;
+        text-decoration: underline;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    li {
+        margin: .5rem;
+    }
+    em {
+        font-style: italic;
+    }
+    img {
+        flex: 0 0 auto;
+        width: 320px;
+        object-fit: contain;
+        border: 2px solid $color-green-darkest;
+    }
+    figure {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 1rem 0rem;
+    }
+    figcaption {
+        margin: 0rem 1rem;
+        text-align: center;
+        font-size: 1rem;
+        @include mx-font-content-alt;
+        font-style: italic;
+        width: 300px;
+    }
+}
+
+#env-consulting-page {
+    display: flex;
+    flex-flow: column nowrap;
+
+    h1 {
+        font-size: 2.375rem;
+    }
+    h2 {
+        font-size: 2.25rem;
+        border-bottom: none;
+        text-decoration: underline;
+    }
+    h3 {
+        margin: 1rem 1rem 1rem 1rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+        margin: 1rem;
+        color: $color-bg-grey-dark;
+    }
+    h5 {
+        margin: 0 1rem .5rem 1rem;
+    }
+    h6 {
+        margin: 1rem;
+    }
+}
+
+#env-tagline {
+    flex-flow: column wrap;
+    height: 20rem;
+
+    > h1 {
+        width: 60%;
+    }
+    > h5 {
+        width: 60%;
+    }
+    > a {
+        margin: 0rem 1rem;
+        font-size: 1.25rem;
+    }
+    > div {
+        width: 320px;
+        margin: 1rem 0;
+        /*box-shadow: 1px 1px 4px 2px $color-blue;*/
+        border: 2px solid #4791c1;
+        @include mx-font-content-alt;
     }
 }
 
@@ -672,7 +1018,6 @@ a.link-action {
     }
 
     #home-banner {
-        /* change background-image ? */
         height: auto;
     }
 
