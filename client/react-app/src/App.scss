@@ -215,8 +215,6 @@ nav {
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: scroll;
-
-
     }
     a {
         flex: 1 1 auto;
@@ -320,14 +318,26 @@ nav {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
+    font-size: 1.25rem;
     @include mx-font-content;
 }
 
 .tagline {
     background-color: $color-faded-green;
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0rem 1rem 1rem 1rem;
+
+}
+
+.tagline-content {
+    display: flex;
     flex-flow: column nowrap;
-    padding: 0rem 1rem;
+
+    a {
+        margin: 0rem 1rem;
+    }
 }
 
 #service-summary {
@@ -504,10 +514,12 @@ nav {
     padding: 25px;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     right: 0;
     width: 250px;
+    height: min-content;
+    flex: 0 0 auto;
 
     > span {
         margin: 0 0 .5rem 0;
@@ -526,7 +538,6 @@ nav {
         color: $color-bg-grey-light;
     }   
     > a::before {
-        content: "⟡";
         content: "➤";
         font-weight: 400;
         font-size: 1rem;
@@ -567,21 +578,10 @@ nav {
 }
 
 #balf-tagline {
-    flex-flow: column wrap;
-    height: 18rem;
-
-    > h1 {
-        width: 60%;
-    }
-    > h5 {
-        width: 60%;
-    }
-    > a {
-        margin: 0rem 1rem;
+    a {
         font-size: 1.25rem;
     }
-    > div {
-        width: 320px;
+    > .table-of-contents {
         margin: 1rem 0;
         /*box-shadow: 1px 1px 4px 2px $color-blue;*/
         border: 2px solid #4791c1;
@@ -614,7 +614,10 @@ nav {
 #balf-ship-cost-sample {
     display: flex;
     flex-flow: row nowrap;
-    margin: 0rem 1rem;
+    margin: 0rem 1rem 1rem 1rem;
+    > div {
+        width: 50%;
+    }
 }
 
 #balf-preparing-sample {
@@ -641,6 +644,11 @@ nav {
         flex-flow: column nowrap;
         align-items: center;
         margin: 1rem 0rem;
+        max-width: 100%;
+
+        img {
+            max-width: 100%;
+        }
     }
     figcaption {
         margin: 0rem 1rem 1rem 1rem;
@@ -649,13 +657,13 @@ nav {
         @include mx-font-content-alt;
         font-style: italic;
         width: 300px;
+        max-width: 100%;
     }
 }
 
 #balf-shipping-sample {
     color: $color-bg-grey-light;
     flex: 1 1 auto;
-    width: 50%;
     margin: 0rem 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -690,7 +698,6 @@ nav {
 
 #balf-cost-sample {
     flex: 1 1 auto;
-    width: 50%;
     margin: 0rem 1rem;
     color: $color-bg-grey-light;
     display: flex;
@@ -735,7 +742,7 @@ nav {
 #env-consulting-page {
     display: flex;
     flex-flow: column nowrap;
-
+    
     h1 {
         font-size: 2.375rem;
     }
@@ -761,25 +768,90 @@ nav {
 }
 
 #env-tagline {
-    flex-flow: column wrap;
-    height: 20rem;
-
-    > h1 {
-        width: 60%;
-    }
-    > h5 {
-        width: 60%;
-    }
-    > a {
-        margin: 0rem 1rem;
+    a {
         font-size: 1.25rem;
     }
-    > div {
-        width: 320px;
+    > .table-of-contents {
         margin: 1rem 0;
         /*box-shadow: 1px 1px 4px 2px $color-blue;*/
         border: 2px solid #4791c1;
         @include mx-font-content-alt;
+    }
+}
+
+#env-what-we-do {
+    display: flex;
+    flex-flow: column nowrap;
+    color: $color-bg-grey-light;
+    margin: 0rem 1rem;
+
+    ul {
+        margin: 0rem 1rem;
+        list-style-type: disc;
+    }
+    li {
+        margin: 0rem 4rem .5rem 4rem;
+    }
+    span {
+        margin: 0rem 1rem;
+    }
+}
+
+#env-request-services {
+    display: flex;
+    flex-flow: column nowrap;
+    color: $color-bg-grey-light;
+    margin: 0rem 1rem;
+
+    div {
+        margin: 0rem 1rem;
+    }
+}
+
+#env-image-aero {
+    img {
+            width: 18rem;
+    }
+}
+
+.inline-image {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.figure-with-caption {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem 0rem;
+
+    figcaption {
+        margin: 0rem 1rem 1rem 1rem;
+        text-align: center;
+        font-size: 1rem;
+        @include mx-font-content-alt;
+        font-style: italic;
+        width: 300px;
+    }
+}
+
+#env-cost-service {
+    display: flex;
+    flex-flow: column nowrap;
+    color: $color-bg-grey-light;
+    margin: 0rem 1rem;
+    
+    div {
+        margin: 0rem 1rem;
+    }
+    ul {
+        margin: 0rem 1rem .5rem 1rem;
+        list-style-type: disc;
+    }
+    li {
+        margin: .5rem 4rem .5rem 4rem;
     }
 }
 
@@ -938,6 +1010,20 @@ a.link-action {
             align-self: flex-end;
         }
     }
+
+    #balf-shipping-sample {
+        ul {
+            margin: 0rem 2.5rem 1rem 2.5rem;
+        }
+    }
+
+    #env-consulting-page {
+        #env-tagline {
+        }
+
+        .table-of-contents {
+        }
+    }
 }
 
 @media all and (max-width: 760px) {
@@ -956,9 +1042,17 @@ a.link-action {
             width: 100%;
             background-color: $color-bg-grey-light;
         }
+        a {
+        }
         a:hover {
             border-bottom: none;
             color: $color-green;
+        }
+        a.home-icon {
+            padding: 1.375rem;
+        }
+        a.home-icon:hover {
+            background-image: url('./assets/home_green_18x18.png');
         }
     }
 
@@ -989,6 +1083,40 @@ a.link-action {
                 margin: 0 1rem 1rem 1rem;
             }
         }
+    }
+
+    .tagline {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+    }
+
+    .tagline-content {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .table-of-contents {
+        width: 320px;
+    }
+
+    #balf-what-we-do {
+    }
+
+    #balf-preparing-sample {
+        flex-flow: column nowrap;
+    }
+
+    #balf-ship-cost-sample {
+        flex-flow: column nowrap;
+        > div {
+            width: auto;
+        }
+    }
+
+    #balf-shipping-sample {
     }
 }
 
@@ -1079,6 +1207,44 @@ a.link-action {
         width: auto;
         padding: 0 0 0 1rem;
         margin: .5rem 0;
+    }
+
+    .table-of-contents {
+        width: 250px;
+    }
+
+    #balf-what-we-do {
+        h3 {
+            text-align: center;
+        }
+        li {
+            margin: .5rem .5rem .5rem 2.5rem;
+        }
+    }
+
+    #balf-preparing-sample {
+        h3 {
+            text-align: center;
+        }
+        ol {
+            margin: 0rem 1rem 0rem 2rem;
+        }
+    }
+
+    #balf-ship-cost-sample {
+        margin: 0;
+        h3 {
+            text-align: center;
+        }
+    }
+
+    #balf-shipping-sample {
+        ul {
+            margin: 0rem 1rem 1rem 2rem;
+        }
+        >div {
+            margin: 0rem .5rem 1rem .5rem;
+        }
     }
 }
 
