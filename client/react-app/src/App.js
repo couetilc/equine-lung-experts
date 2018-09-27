@@ -35,6 +35,7 @@ class MainPage extends Component {
                 <Route exact path='/' component={Home} />
                 <Route path='/balfsample' component={BalfSample} />
                 <Route path='/environmentalconsulting' component={EnvironmentalConsulting} />
+                <Route path='/resources' component={Resources} />
                 <Route component={PageNotFound} />
             </Switch>
 
@@ -98,7 +99,7 @@ class BalfSample extends Component {
 
                 <figure>
                     <img src={imgBalf} />
-                    <figcaption>Dr. Ivester retrieving a BALF sample from a patient.</figcaption>
+                    <figcaption>Dr. Ivester retrieving a BALF sample.</figcaption>
                     <img src={imgCytology} />
                     <figcaption>BAL cytology samples.</figcaption>
                 </figure>
@@ -162,8 +163,8 @@ class EnvironmentalConsulting extends Component {
                     <div id="env-what-we-do">
                         <h3>What We Do</h3>
                         <ul>
-                            <li>We sample and quantify airborne irritants and allergens using gravimetric air sampling techniques and real time particulate counters.</li>
-                            <li>We assess dust and allergen sources by testing feedstuff and bedding samples.</li>
+                            <li>Sample and quantify airborne irritants and allergens using gravimetric air sampling techniques and real time particulate counters.</li>
+                            <li>Assess dust and allergen sources by testing feedstuff and bedding samples.</li>
                         </ul>
                         <span>The service is tailored to each situation and the goals expressed by the horse’s owner and veterinarian.</span>
                     </div>
@@ -176,7 +177,7 @@ class EnvironmentalConsulting extends Component {
 
                 <figure id="env-image-aero" className="figure-with-caption">
                     <img src={imgAero} />
-                    <figcaption>Dr. Couetil delivering medication to a patient.</figcaption>
+                    <figcaption>Dr. Couetil with a patient.</figcaption>
                 </figure>
             </div>
 
@@ -190,8 +191,65 @@ class EnvironmentalConsulting extends Component {
             </ul>
 
             </div>
+        </div>);
+    }
+}
 
-            
+class Resources extends Component {
+    render() {
+        return (
+        <div id="resources-page" className="blank-page">
+            <div id="resources-tagline" className="tagline">
+                <div className="tagline-content">
+                    <h1>Resources</h1>
+                    <h5>Equine Lung Experts uses powerful diagnostic tools to provide high quality care for patients. Our experts are informed by decades of clinical experience and produce cutting-edge research on equine respiratory health.</h5>
+                     <a href="/contact">Contact us →</a>
+                </div>
+
+                <div className="table-of-contents">
+                    <span>Table of Contents</span>
+                    <a href="#educational-resources">Educational Resources</a>
+                    <a href="#articles-resources">Articles by the Experts</a>
+                </div>
+            </div>
+
+            <div id="educational-resources">
+                <h3>Educational Resources</h3>
+                <ol>
+                    <li>
+                        <a href="https://vet.purdue.edu/esmc/pulmonary-function.php">Pulmonary Function Testing</a>
+                    </li>
+                    <li>
+                        <a href="https://vet.purdue.edu/esmc/index.php">Purdue Equine Sports Medicine Center Website</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="articles-resources">
+                <h3>Articles by Dr. Couetil and Dr. Ivester</h3>
+                <ol className="article-list">
+                    <li className="article-title">
+                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jvim.13824">Inflammatory airway disease of horse: Consensus statement</a>
+                    </li>
+                    <li className="article-summary">The purpose of this manuscript is to revise and update the previous consensus statement on inflammatory airway disease (IAD) in horses. Since 2007, a large number of scientific articles have been published on the topic and these new findings have led to a significant evolution of our understanding of IAD.</li>
+                    <li className="article-title">
+                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jvim.12458">Investigating the link between particulate exposure and airway inflammation in the horse</a>
+                    </li>
+                    <li className="article-summary">Inhalant exposure to airborne irritants commonly encountered in horse stables is implicated in the pathogenesis of inflammatory airway disease (IAD) and recurrent airway obstruction (RAO), non‐infectious, inflammatory pulmonary disorders that impact the health and performance of horses across all equine disciplines. IAD and RAO have overlapping clinical, cytological, and functional manifestations of the pulmonary response to organic dust and noxious gases encountered in the barn environment.</li>
+                    <li className="article-title">
+                        <a href="https://www.haygain.us/blogs/news-and-events/equine-asthma-a-new-term-for-an-old-problem">Equine asthma: A new term for an old problem</a>
+                    </li>
+                    <li className="article-summary">For nearly as long as horses have been domesticated, the relationship between barn confinement and respiratory disease in the horse has been recognized. This relationship is intuitive, especially when we consider that deep in the lung, where the blood takes up oxygen, the barrier between the outside air and the horse’s circulation is as thin as a couple of cells. The surface area of this gas-exchange region of the lung has on average a surface area of 2500 m2, equal to nearly half a football field. The response of the lung’s immune system to inhaled air results in a number of diseases in both humans and horses.</li>
+                    <li className="article-title">
+                        <a href="https://thehorse.com/156894/how-pulmonary-disease-impacts-equine-performance">How pulmonary disease impacts equine performance</a>
+                    </li>
+                    <li className="article-summary">Understanding how pulmonary disease impacts performance can help veterinarians diagnose and treat issues that could be impairing horses’ athleticism.</li>
+                    <li className="article-title">
+                        <a href="https://thehorse.com/19375/breathing-easy-managing-horses-with-asthma/">Breathing easy: Managing horses with asthma</a>
+                    </li>
+                    <li className="article-summary">Does your horse have asthma? Find out how you can help him through management and environmental changes.</li>
+                </ol>
+            </div>
         </div>);
     }
 }
@@ -263,7 +321,7 @@ class Menu extends Component {
                 <NavLink to='#' activeClassName='selected'>Contact Us</NavLink>
             </li>
             <li>
-                <NavLink to='#' activeClassName='selected'>Resources/Articles</NavLink>
+                <NavLink to='/resources' activeClassName='selected'>Resources</NavLink>
             </li>
         </ul>);
     }
@@ -316,8 +374,10 @@ class Tagline extends Component {
     render() {
         return (
         <section className="tagline">
-            <h1>{ this.state.title }</h1>
-            <h5>{ this.state.content }</h5>
+            <div id="tagline-main" className="tagline-content">
+                <h1>{ this.state.title }</h1>
+                <h5>{ this.state.content }</h5>
+            </div>
         </section>);
     }
 }
