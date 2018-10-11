@@ -496,7 +496,6 @@ nav {
     font-weight: 300;
     font-family: Tahoma, sans-serif;
     font-style: italic;
-    width: 300px;
     max-width: 100%; }
 
 #balf-shipping-sample {
@@ -560,8 +559,7 @@ nav {
     font-variant: normal;
     font-weight: 300;
     font-family: Tahoma, sans-serif;
-    font-style: italic;
-    width: 300px; }
+    font-style: italic; }
 
 #env-consulting-page {
   display: flex;
@@ -629,8 +627,7 @@ nav {
     font-variant: normal;
     font-weight: 300;
     font-family: Tahoma, sans-serif;
-    font-style: italic;
-    width: 300px; }
+    font-style: italic; }
 
 #env-cost-service {
   display: flex;
@@ -654,20 +651,19 @@ nav {
   font-variant: normal;
   font-weight: 400;
   font-family: Verdana, sans-serif; }
-  #educational-resources ol li {
-    min-width: 200px;
-    flex: 1 0;
-    display: flex;
-    flex-flow: row nowrap;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #ead3e0;
-    border: 2px solid #cd69a0;
-    padding: .5rem;
-    margin: .5rem 2rem; }
-  #educational-resources ol a {
-    text-decoration: none; }
+
+.resource {
+  min-width: 200px;
+  flex: 1 0;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDF5EE;
+  border: 2px solid #23982b;
+  padding: .5rem;
+  margin: 1rem 2rem; }
 
 .article-list {
   display: flex;
@@ -688,6 +684,46 @@ nav {
     font-size: 1.125rem;
     margin: 0rem 1rem 1rem 4rem;
     padding: .5rem 1rem; }
+
+.contact-form {
+  padding: 0rem 1rem 1rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .contact-form h3 {
+    margin-left: 0; }
+  .contact-form div {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: .5rem 0rem; }
+  .contact-form div.submit-box {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 10rem; }
+  .contact-form label {
+    min-width: 10rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: .5rem; }
+  .contact-form #label-message {
+    align-self: flex-start; }
+  .contact-form input, .contact-form select {
+    font-size: 1.25rem;
+    height: 1.5rem;
+    border-radius: 2px;
+    padding: .25rem;
+    border-style: solid;
+    border-width: 1px; }
+  .contact-form input[type="text"], .contact-form input[type="email"], .contact-form select {
+    min-width: 20rem; }
+  .contact-form input[type="submit"], .contact-form select {
+    height: 2rem; }
+  .contact-form textarea {
+    min-width: 20rem;
+    min-height: 10rem;
+    border-radius: 4px; }
 
 footer {
   display: flex;
@@ -859,7 +895,13 @@ a.link-action {
     .article-list li {
       margin: 0rem 1rem .5rem 1rem; }
     .article-list .article-summary {
-      margin: 0rem 1rem 1rem 2rem; } }
+      margin: 0rem 1rem 1rem 2rem; }
+  .inline-image {
+    flex-flow: column nowrap; }
+  #env-what-we-do li {
+    margin: 0rem 2rem .5rem 2rem; }
+  #env-cost-service li {
+    margin: .5rem 2rem .5rem 2rem; } }
 
 @media all and (max-width: 480px) {
   h1 {
@@ -929,7 +971,20 @@ a.link-action {
   #balf-shipping-sample ul {
     margin: 0rem 1rem 1rem 2rem; }
   #balf-shipping-sample > div {
-    margin: 0rem .5rem 1rem .5rem; } }
+    margin: 0rem .5rem 1rem .5rem; }
+  #env-what-we-do {
+    margin: 0;
+    padding: 0; }
+    #env-what-we-do span {
+      margin: 0;
+      padding: 0rem 1rem; }
+  #env-request-services {
+    margin: 0; }
+    #env-request-services div {
+      margin: 0;
+      padding: 0rem 1rem; }
+  #env-cost-service {
+    margin: 0; } }
 
 @media all and (max-width: 320px) {
   #home-banner-message h1 {

@@ -9,7 +9,7 @@ ENV PATH $HOME/node_modules/.bin:$PATH
 
 COPY react-app/package.json $HOME
 
-RUN npm install --silent
+RUN npm ci --silent
 
 COPY react-app/ $HOME
 RUN npm run build

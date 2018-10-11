@@ -36,6 +36,7 @@ class MainPage extends Component {
                 <Route path='/balfsample' component={BalfSample} />
                 <Route path='/environmentalconsulting' component={EnvironmentalConsulting} />
                 <Route path='/resources' component={Resources} />
+                <Route path='/contact' component={Contact} />
                 <Route component={PageNotFound} />
             </Switch>
 
@@ -208,19 +209,19 @@ class Resources extends Component {
 
                 <div className="table-of-contents">
                     <span>Table of Contents</span>
-                    <a href="#educational-resources">Educational Resources</a>
+                    <a href="#educational-resources">Educational Materials</a>
                     <a href="#articles-resources">Articles by the Experts</a>
                 </div>
             </div>
 
             <div id="educational-resources">
-                <h3>Educational Resources</h3>
+                <h3>Educational Materials</h3>
                 <ol>
-                    <li>
-                        <a href="https://vet.purdue.edu/esmc/pulmonary-function.php">Pulmonary Function Testing</a>
+                    <li className="resource">
+                        <a className="resource-title" href="https://vet.purdue.edu/esmc/pulmonary-function.php">Pulmonary Function Testing</a>
                     </li>
-                    <li>
-                        <a href="https://vet.purdue.edu/esmc/index.php">Purdue Equine Sports Medicine Center Website</a>
+                    <li className="resource">
+                        <a className="resource-title" href="https://vet.purdue.edu/esmc/index.php">Purdue Equine Sports Medicine Center Website</a>
                     </li>
                 </ol>
             </div>
@@ -252,6 +253,69 @@ class Resources extends Component {
             </div>
         </div>);
     }
+}
+
+class Contact extends Component {
+    render() {
+        return (
+        <div id="contact-page" className="blank-page">
+            <div id="contact-tagline" className="tagline">
+                <div className="tagline-content">
+                    <h1>Contact Us</h1>
+                    <h5>Equine Lung Experts can be contacted by filling out the form below. Otherwise, please direct inquiries to <a href="mailto:equinelungexperts@gmail.com">equinelungexperts@gmail.com</a></h5>
+                </div>
+            </div>
+
+            <ContactForm />
+        </div>);
+    }
+}
+
+class ContactForm extends Component {
+    render() {
+        return (
+        <div id="contact-form" className="contact-form">
+            <h3>Contact Us</h3>
+            <h6>equinelungexperts@gmail.com</h6>
+            <form action="/contact" method="post">
+                <div>
+                    <label for="fullname" id="label-fullname">Full Name:*</label>
+                    <input type="text" className="contact-name" name="fullname" required></input>
+                </div>
+                <div>
+                    <label for="email" id="label-email">Email:*</label>
+                    <input type="email" className="contact-email" name="email" required></input>
+                </div>
+                <div>
+                    <label for="phone" id="label-phone">Phone Number:*</label>
+                    <input type="text" className="contact-phone" name="phone" required></input>
+                </div>
+                <div>
+                    <label for="subject" id="label-subject">Subject:*</label>
+                    <select name="subject" className="contact-subject" required>
+                        <option value="balf-sample">Submit a BALF sample</option>
+                        <option value="env-consulting">Schedule an environmental evaluation</option>
+                        <option value="question">Ask a question</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message" id="label-message">Message:*</label>
+                    <textarea className="contact-message" name="message" required></textarea>
+                </div>
+                <div className="submit-box">
+                    <input type="submit" className="contact-submit" value="Send Message"></input>
+                    <span>* Required field</span>
+                </div>
+            </form>
+        </div>);
+    }
+}
+
+const MailtoForm = () => {
+    return(
+    <div id="mailto-form" className="mailto-form">
+        <div>Discuss your case with us at <a href="mailto:info@equinelungexperts.com">info@equinelungexperts.com</a></div>
+    </div>);
 }
 
 const PageNotFound = () => {
@@ -312,13 +376,13 @@ class Menu extends Component {
                 <NavLink to='/#people-summary' activeClassName='selected'>About Us</NavLink>
             </li>
             <li>
+                <NavLink to='/contact' activeClassName='selected'>Contact Us</NavLink>
+            </li>
+            <li>
                 <NavLink to='/balfsample' activeClassName='selected'>Submit a Sample</NavLink>
             </li>
             <li>
                 <NavLink to='/environmentalconsulting' activeClassName='selected'>Environmental Consulting</NavLink>
-            </li>
-            <li>
-                <NavLink to='#' activeClassName='selected'>Contact Us</NavLink>
             </li>
             <li>
                 <NavLink to='/resources' activeClassName='selected'>Resources</NavLink>
@@ -361,6 +425,7 @@ class HomeContent extends Component {
             <Tagline { ...this.state.default.tagline } />
             <ServiceSummary />
             <PeopleSummary />
+            <MailtoForm />
         </main>);
     }
 }
@@ -396,7 +461,7 @@ class ServiceSummary extends Component {
             },
             summaryEval: {
                 title: "Environmental Exposure Counseling",
-                content: "Our experts can examine your horse's environment, measure stall or barn ventilation, and sample airborned irritants to identify potential causes of equine asthma and recommend appropriate interventions and treatments.",
+                content: "Our experts can examine your horse's environment, measure stall or barn ventilation, and sample airborn irritants to identify potential causes of equine asthma and recommend appropriate interventions and treatments.",
                 action: {
                     link: "#",
                     text: "Schedule Evaluation"
@@ -439,8 +504,7 @@ class PeopleSummary extends Component {
     render() {
         return (
         <section id="people-summary">
-            <h2>Our Experts</h2>
-            <h6>Discuss your case with us</h6>
+            <h2>The Experts</h2>
             <div className="bio-showcase">
                 <Bio { ...this.state.default.bioLaurent } />
                 <Bio { ...this.state.default.bioKathleen } />

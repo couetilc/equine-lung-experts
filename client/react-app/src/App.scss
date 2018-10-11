@@ -660,7 +660,6 @@ nav {
         font-size: 1rem;
         @include mx-font-content-alt;
         font-style: italic;
-        width: 300px;
         max-width: 100%;
     }
 }
@@ -739,7 +738,6 @@ nav {
         font-size: 1rem;
         @include mx-font-content-alt;
         font-style: italic;
-        width: 300px;
     }
 }
 
@@ -831,7 +829,6 @@ nav {
         font-size: 1rem;
         @include mx-font-content-alt;
         font-style: italic;
-        width: 300px;
     }
 }
 
@@ -860,23 +857,31 @@ nav {
         justify-content: space-around;
         margin: 0rem 1rem;
         @include mx-font-banner-content;
+    }
+}
 
-        li {
-            min-width: 200px;
-            flex: 1 0;
-            display: flex;
-            flex-flow: row nowrap;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            background-color: $color-faded-purple;
-            border: 2px solid $color-purple-light;
-            padding: .5rem;
-            margin: .5rem 2rem;
-        }
-        a {
-            text-decoration: none;
-        }
+.resource {
+    min-width: 200px;
+    flex: 1 0;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-faded-green;
+    border: 2px solid $color-green-dark;
+    padding: .5rem;
+    margin: 1rem 2rem;
+
+    .resource-title {
+    }
+    .resource-title::before {
+    }
+    .resouce-link {
+    }
+    .resource-link::before {
+    }
+    .resource-summary {
     }
 }
 
@@ -900,6 +905,57 @@ nav {
         font-size: 1.125rem;
         margin: 0rem 1rem 1rem 4rem;
         padding: .5rem 1rem;
+    }
+}
+
+.contact-form {
+    padding: 0rem 1rem 1rem 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    h3 {
+        margin-left: 0;
+    }
+    div {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: .5rem 0rem;
+    }
+    div.submit-box {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-left: 10rem;
+    }
+    label {
+        min-width: 10rem;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: .5rem;
+    }
+    #label-message {
+        align-self: flex-start;
+    }
+    input, select {
+        font-size: 1.25rem;
+        height: 1.5rem;
+        border-radius: 2px;
+        padding: .25rem;
+        border-style: solid;
+        border-width: 1px;
+    }
+    input[type="text"], input[type="email"], select {
+        min-width: 20rem;
+    }
+    input[type="submit"], select {
+        height: 2rem;
+    }
+    textarea {
+        min-width: 20rem;
+        min-height: 10rem;
+        border-radius: 4px;
     }
 }
 
@@ -1177,6 +1233,18 @@ a.link-action {
             margin: 0rem 1rem 1rem 2rem;
         }
     }
+
+    .inline-image {
+        flex-flow: column nowrap;
+    }
+
+    #env-what-we-do li {
+        margin: 0rem 2rem .5rem 2rem;
+    }
+
+    #env-cost-service li {
+        margin: .5rem 2rem .5rem 2rem;
+    }
 }
 
 @media all and (max-width: 480px) {
@@ -1304,6 +1372,29 @@ a.link-action {
         >div {
             margin: 0rem .5rem 1rem .5rem;
         }
+    }
+
+    #env-what-we-do {
+        margin: 0;
+        padding: 0;
+
+        span {
+            margin: 0;
+            padding: 0rem 1rem;
+        }
+    }
+
+    #env-request-services {
+        margin: 0;
+
+        div {
+            margin: 0;
+            padding: 0rem 1rem;;
+        }
+    }
+
+    #env-cost-service {
+        margin: 0;
     }
 }
 
