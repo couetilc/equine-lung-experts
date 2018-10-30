@@ -116,10 +116,22 @@ nav {
     flex-flow: row nowrap;
     justify-content: space-around;
     height: inherit; }
-  nav a.home-icon {
+  nav .home-icon {
     flex: 1 1 auto;
     background-image: url("./assets/home_white_18x18.png");
     background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; }
+  nav a.home-icon-open {
+    background-image: url("./assets/icon-menu-open.png");
+    background-size: 87px 19px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; }
+  nav a.home-icon-close {
+    background-image: url("./assets/icon-menu-close.png");
+    background-size: 156px 19px;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll; }
@@ -717,11 +729,14 @@ nav {
     border-style: solid;
     border-width: 1px; }
   .contact-form input[type="text"], .contact-form input[type="email"], .contact-form select {
-    min-width: 20rem; }
+    max-width: 20rem;
+    width: 100%; }
   .contact-form input[type="submit"], .contact-form select {
-    height: 2rem; }
+    height: 2rem;
+    border-color: #333333; }
   .contact-form textarea {
-    min-width: 20rem;
+    max-width: 20rem;
+    width: 100%;
     min-height: 10rem;
     border-radius: 4px; }
 
@@ -857,8 +872,14 @@ a.link-action {
       color: #40ac47; }
     nav a.home-icon {
       padding: 1.375rem; }
-    nav a.home-icon:hover {
-      background-image: url("./assets/home_green_18x18.png"); }
+    nav .mobile-menu-toggle {
+      padding: 1.375rem; }
+    nav a.home-icon-desktop:hover {
+      background-image: url("./assets/home_green_18x18.png");
+      background-size: 18px 18px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll; }
   #service-summary {
     flex-flow: column nowrap; }
     #service-summary .summary-item {
@@ -884,6 +905,13 @@ a.link-action {
     text-align: center; }
   .table-of-contents {
     width: 320px; }
+  .contact-form div {
+    flex-flow: column nowrap; }
+  .contact-form label {
+    text-align: left;
+    justify-content: flex-start; }
+  .contact-form div.submit-box {
+    margin-left: 0rem; }
   #balf-preparing-sample {
     flex-flow: column nowrap; }
   #balf-ship-cost-sample {
@@ -986,6 +1014,6 @@ a.link-action {
   #env-cost-service {
     margin: 0; } }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 325px) {
   #home-banner-message h1 {
     font-size: 2.2rem; } }

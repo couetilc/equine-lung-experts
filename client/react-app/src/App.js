@@ -13,6 +13,7 @@ import imgCytology from './assets/bal-cytology.png';
 import imgAero from './assets/llc-aerohippus.png';
 import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-orange-rtl.png';
+import sampleForm from './assets/Equine Lung Experts-BALF cytology request form.pdf';
 
 class App extends Component {
     render() {
@@ -82,7 +83,7 @@ class BalfSample extends Component {
                     <li>A report is provided describing microscopic appearance of the submission including cellularity, differential cell count (based on minimum 400 cells), mucus characteristics, and overall cytologic interpretation. When appropriate, comments regarding etiology are provided.</li>
                     <li>Cytology interpretation will be reported within 1-2 working days after receipt of the sample.</li>
                 </ul>
-                <span>As part of the service, we offer a free phone consultation (up to 15 min) for each horse sample submitted to Equine Lung Experts. Call Dr. Laurent Couetil’s mobile at (765) 427-5617.</span>
+                <span>As part of the service, we offer a free phone consultation (up to 15 min) for each horse sample submitted to Equine Lung Experts. Contact <a href="/contact">info@equinelungexperts.com</a> to set up an appointment.</span>
             </div>
 
             <div id="balf-preparing-sample">
@@ -94,7 +95,7 @@ class BalfSample extends Component {
                         <li>Store BALF sample immediately at 2-8 °C until shipped.</li>
                         <li>Pour second aliquot (10 ml) and centrifuge at 300 g for 10 minutes, pour off supernatant and transfer cell pellet on a slide to make a smear.</li>
                         <li>Prepare at least 2 smear slides and dry promptly.</li>
-                        <li>Print and complete "the Cytology Sample Submission Form". Insert into package along with the sample, slides, and payment.</li>
+                        <li><a href={sampleForm} target="_blank">Print and complete "the Cytology Sample Submission Form" (click to download).</a> Insert into package along with the sample, slides, and payment.</li>
                     </ol>
                 </div>
 
@@ -113,7 +114,7 @@ class BalfSample extends Component {
                     <ul>
                         <li>1 BALF aliquot in EDTA tube (~ 5 ml) on ice pack(s) inside a Styrofoam box</li>
                         <li>2 air-dried smear slides placed in a small slide box</li>
-                        <li>BALF cytology sample submission form</li>
+                        <li><a href={sampleForm} target="_blank">BALF cytology sample submission form (click to download)</a></li>
                     </ul>
                     <span>Shipping Address</span>
                         <ul className="address">
@@ -172,7 +173,7 @@ class EnvironmentalConsulting extends Component {
 
                     <div id="env-request-services">
                         <h3>How to Request Counseling Services</h3>
-                        <div>Please contact Equine Lung Experts by email (equinelungexperts@gmail.com) to discuss the type of service desired.  We will respond to the email within 1-2 working days.</div>
+                        <div>Please contact Equine Lung Experts by email (info@equinelungexperts.com) to discuss the type of service desired.  We will respond to the email within 1-2 working days.</div>
                     </div>
                 </div>
 
@@ -230,6 +231,18 @@ class Resources extends Component {
                 <h3>Articles by Dr. Couetil and Dr. Ivester</h3>
                 <ol className="article-list">
                     <li className="article-title">
+                        <a href="https://thehorse.com/19375/breathing-easy-managing-horses-with-asthma/">Breathing easy: Managing horses with asthma</a>
+                    </li>
+                    <li className="article-summary">Does your horse have asthma? Find out how you can help him through management and environmental changes.</li>
+                    <li className="article-title">
+                        <a href="https://thehorse.com/156894/how-pulmonary-disease-impacts-equine-performance">How pulmonary disease impacts equine performance</a>
+                    </li>
+                    <li className="article-summary">Understanding how pulmonary disease impacts performance can help veterinarians diagnose and treat issues that could be impairing horses’ athleticism.</li>
+                    <li className="article-title">
+                        <a href="https://www.haygain.us/blogs/news-and-events/equine-asthma-a-new-term-for-an-old-problem">Equine asthma: A new term for an old problem</a>
+                    </li>
+                    <li className="article-summary">For nearly as long as horses have been domesticated, the relationship between barn confinement and respiratory disease in the horse has been recognized. This relationship is intuitive, especially when we consider that deep in the lung, where the blood takes up oxygen, the barrier between the outside air and the horse’s circulation is as thin as a couple of cells. The surface area of this gas-exchange region of the lung has on average a surface area of 2500 m2, equal to nearly half a football field. The response of the lung’s immune system to inhaled air results in a number of diseases in both humans and horses.</li>
+                    <li className="article-title">
                         <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jvim.13824">Inflammatory airway disease of horse: Consensus statement</a>
                     </li>
                     <li className="article-summary">The purpose of this manuscript is to revise and update the previous consensus statement on inflammatory airway disease (IAD) in horses. Since 2007, a large number of scientific articles have been published on the topic and these new findings have led to a significant evolution of our understanding of IAD.</li>
@@ -237,18 +250,6 @@ class Resources extends Component {
                         <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jvim.12458">Investigating the link between particulate exposure and airway inflammation in the horse</a>
                     </li>
                     <li className="article-summary">Inhalant exposure to airborne irritants commonly encountered in horse stables is implicated in the pathogenesis of inflammatory airway disease (IAD) and recurrent airway obstruction (RAO), non‐infectious, inflammatory pulmonary disorders that impact the health and performance of horses across all equine disciplines. IAD and RAO have overlapping clinical, cytological, and functional manifestations of the pulmonary response to organic dust and noxious gases encountered in the barn environment.</li>
-                    <li className="article-title">
-                        <a href="https://www.haygain.us/blogs/news-and-events/equine-asthma-a-new-term-for-an-old-problem">Equine asthma: A new term for an old problem</a>
-                    </li>
-                    <li className="article-summary">For nearly as long as horses have been domesticated, the relationship between barn confinement and respiratory disease in the horse has been recognized. This relationship is intuitive, especially when we consider that deep in the lung, where the blood takes up oxygen, the barrier between the outside air and the horse’s circulation is as thin as a couple of cells. The surface area of this gas-exchange region of the lung has on average a surface area of 2500 m2, equal to nearly half a football field. The response of the lung’s immune system to inhaled air results in a number of diseases in both humans and horses.</li>
-                    <li className="article-title">
-                        <a href="https://thehorse.com/156894/how-pulmonary-disease-impacts-equine-performance">How pulmonary disease impacts equine performance</a>
-                    </li>
-                    <li className="article-summary">Understanding how pulmonary disease impacts performance can help veterinarians diagnose and treat issues that could be impairing horses’ athleticism.</li>
-                    <li className="article-title">
-                        <a href="https://thehorse.com/19375/breathing-easy-managing-horses-with-asthma/">Breathing easy: Managing horses with asthma</a>
-                    </li>
-                    <li className="article-summary">Does your horse have asthma? Find out how you can help him through management and environmental changes.</li>
                 </ol>
             </div>
         </div>);
@@ -262,7 +263,7 @@ class Contact extends Component {
             <div id="contact-tagline" className="tagline">
                 <div className="tagline-content">
                     <h1>Contact Us</h1>
-                    <h5>Equine Lung Experts can be contacted by filling out the form below. Otherwise, please direct inquiries to <a href="mailto:equinelungexperts@gmail.com">equinelungexperts@gmail.com</a></h5>
+                    <h5>Equine Lung Experts can be contacted by filling out the form below. Otherwise, please direct inquiries to <a href="mailto:info@equinelungexperts.com">info@equinelungexperts.com</a></h5>
                 </div>
             </div>
 
@@ -272,39 +273,43 @@ class Contact extends Component {
 }
 
 class ContactForm extends Component {
+    submitContactForm(event) {
+        console.log(event);
+    }
+
     render() {
         return (
         <div id="contact-form" className="contact-form">
             <h3>Contact Us</h3>
-            <h6>equinelungexperts@gmail.com</h6>
-            <form action="/contact" method="post">
+            <h6>info@equinelungexperts.com</h6>
+            <form action="mailto:info@equinelungexperts.com" method="POST" enctype="text/plain">
                 <div>
-                    <label for="fullname" id="label-fullname">Full Name:*</label>
+                    <label htmlFor="fullname" id="label-fullname">Full Name:*</label>
                     <input type="text" className="contact-name" name="fullname" required></input>
                 </div>
                 <div>
-                    <label for="email" id="label-email">Email:*</label>
+                    <label htmlFor="email" id="label-email">Email:*</label>
                     <input type="email" className="contact-email" name="email" required></input>
                 </div>
                 <div>
-                    <label for="phone" id="label-phone">Phone Number:*</label>
+                    <label htmlFor="phone" id="label-phone">Phone Number:*</label>
                     <input type="text" className="contact-phone" name="phone" required></input>
                 </div>
                 <div>
-                    <label for="subject" id="label-subject">Subject:*</label>
+                    <label htmlFor="subject" id="label-subject">Subject:*</label>
                     <select name="subject" className="contact-subject" required>
-                        <option value="balf-sample">Submit a BALF sample</option>
-                        <option value="env-consulting">Schedule an environmental evaluation</option>
-                        <option value="question">Ask a question</option>
+                        <option value="submit-a-balf-sample">Submit a BALF sample</option>
+                        <option value="schedule-environmental-consulting">Schedule an environmental evaluation</option>
+                        <option value="ask-a-question">Ask a question</option>
                     </select>
                 </div>
                 <div>
-                    <label for="message" id="label-message">Message:*</label>
+                    <label htmlFor="message" id="label-message">Message:*</label>
                     <textarea className="contact-message" name="message" required></textarea>
                 </div>
                 <div className="submit-box">
-                    <input type="submit" className="contact-submit" value="Send Message"></input>
                     <span>* Required field</span>
+                    <input type="submit" className="contact-submit" value="Send Message" onClick={this.submitContactForm.bind(this)}></input>
                 </div>
             </form>
         </div>);
@@ -363,28 +368,108 @@ class NavDesktop extends Component {
 }
 
 class Menu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isVisible: false,
+            isClicked: false,
+            inDesktopView: window.innerWidth > 760
+        };
+
+        this.toggleMenu = this._toggleMenu.bind(this);
+        this.updateMenu = this._updateMenu.bind(this);
+    }
+
+    _toggleMenu() {
+        if (!this.state.inDesktopView) {
+            this.setState(prevState => ({
+                isClicked: !prevState.isClicked
+            }));
+        }
+    }
+
+    _updateMenu() {
+        const wasVisible = this.state.isVisible;
+        const wasDesktopView = this.state.inDesktopView;
+        const inDesktopView = window.innerWidth > 760;
+        const isVisible = inDesktopView || this.state.isClicked;
+
+        if (wasVisible !== isVisible) {
+            this.setState({
+                isVisible: isVisible
+            });
+        }
+
+        if (wasDesktopView !== inDesktopView) {
+            this.setState({
+                inDesktopView: inDesktopView
+            });
+        }
+    }
+
+    componentWillMount() {
+        this.updateMenu();
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.updateMenu);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateMenu);
+        document.querySelectorAll('.nav-menu-toggle-mobile')
+            .forEach(li => li.removeEventListener('click', this.toggleMenu));
+    }
+
     render() {
+        this.updateMenu();
+
+        const styles = {
+            menu_item: {
+                display: this.state.isVisible ? 'flex' : 'none'
+            }
+        };
+
+        let mobile_toggle = null;
+        let class_menu_toggle = 'home-icon';
+        let class_menu_toggle_selected = 'selected-home';
+
+        if (this.state.inDesktopView) {
+            class_menu_toggle += ' home-icon-desktop';
+        } else {
+            if (this.state.isClicked) {
+                mobile_toggle = (<li className="nav-menu-toggle-mobile">
+                    <NavLink to='#' className='mobile-menu-toggle home-icon-close' onClick={this.toggleMenu}></NavLink>
+                </li>);
+            } else {
+                mobile_toggle = (<li className='nav-menu-toggle-mobile'>
+                    <NavLink to='#' className='mobile-menu-toggle home-icon-open' onClick={this.toggleMenu}></NavLink>
+                </li>);
+            }
+        }
+
         return (
         <ul>
-            <li>
-                <NavLink exact className='home-icon' to='/' activeClassName='selected-home'></NavLink>
+            {mobile_toggle}
+            <li className="nav-menu-toggle">
+                <NavLink exact className={class_menu_toggle} style={styles.menu_item} to='/' activeClassName={class_menu_toggle_selected}></NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/#service-summary' activeClassName='selected'>Services</NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/#people-summary' activeClassName='selected'>About Us</NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/contact' activeClassName='selected'>Contact Us</NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/balfsample' activeClassName='selected'>Submit a Sample</NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/environmentalconsulting' activeClassName='selected'>Environmental Consulting</NavLink>
             </li>
-            <li>
+            <li className="nav-menu-item" style={styles.menu_item}>
                 <NavLink to='/resources' activeClassName='selected'>Resources</NavLink>
             </li>
         </ul>);
@@ -399,7 +484,7 @@ class HomeBanner extends Component {
             titleB: "MOVE FASTER",
             content: "Respiratory diseases cause coughing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
             action: {
-                link: "#",
+                link: "#tagline-main",
                 text: "LEARN MORE"
             }
         }};
@@ -425,7 +510,7 @@ class HomeContent extends Component {
             <Tagline { ...this.state.default.tagline } />
             <ServiceSummary />
             <PeopleSummary />
-            <MailtoForm />
+            <ContactForm />
         </main>);
     }
 }
@@ -455,7 +540,7 @@ class ServiceSummary extends Component {
                 title: "BALF Interpretation and  Diagnostics",
                 content: "Submit a sample and we will return a report describing the microscopic appearance of cytology including cellularity, differential cell count, mucus characteristics, and overall cytologic interpretation. When appropriate, comments regarding etiology will be provided.",
                 action: {
-                    link: "#",
+                    link: "/balfsample",
                     text: "Submit Sample"
                 }
             },
@@ -463,7 +548,7 @@ class ServiceSummary extends Component {
                 title: "Environmental Exposure Counseling",
                 content: "Our experts can examine your horse's environment, measure stall or barn ventilation, and sample airborn irritants to identify potential causes of equine asthma and recommend appropriate interventions and treatments.",
                 action: {
-                    link: "#",
+                    link: "/environmentalconsulting",
                     text: "Schedule Evaluation"
                 }
             }
@@ -520,27 +605,25 @@ class Footer extends Component {
             listingServices: {
                 header: { text: "Services" },
                 links: [
-                    { text: "Submit a Sample", link: "#" },
-                    { text: "Instructions for shipping sample", link: "#" },
-                    { text: "Make a Payment", link: "#" },
-                    { text: "Track Status", link: "#" },
-                    { text: "Log In", link: "#" },
-                    { text: "Create Account", link: "#" } ]
+                    { text: "Submit a Sample", link: "/balfsample" },
+                    { text: "Instructions for shipping sample", link: "/balfsample#balf-preparing-sample" },
+                    { text: "Environmental Consulting", link: "/environmentalconsulting" },
+                    { text: "Request Assessment Services", link: "/environmentalconsulting#env-request-services" } 
+                ]
             },
             listingLearn: {
                 header: { text: "Learn About" },
                 links: [
-                    { text: "Our Experts", link: "#" },
-                    { text: "Resources and Articles", link: "#" },
-                    { text: "Bronchoalveolar Lavage Fluid (BALF) Interpretation", link: "#" },
-                    { text: "Environmental Exposure Counseling", link: "#" },
-                    { text: "Terminology Guide", link: "#" } ]
+                    { text: "Our Experts", link: "/#people-summary" },
+                    { text: "Resources and Articles", link: "/resources" },
+                    { text: "Bronchoalveolar Lavage Fluid (BALF) Interpretation", link: "/balfsample#balf-what-we-do" },
+                    { text: "Environmental Exposure Counseling", link: "/environmentalconsulting#env-what-we-do" } ]
             },
             listingContact: {
                 header: { text: "Contact Us" },
                 links: [
-                    { text: "Send us an email", link: "#" },
-                    { text: "Request Phone Number/Schedule Evaluation", link: "#" } ]
+                    { text: "Send us an email", link: "/contact" },
+                    { text: "Request Phone Number/Schedule Evaluation", link: "/contact" } ]
             }
         }};
     }
@@ -620,19 +703,11 @@ const LinkAction = props => (
     </a>
 );
 
-class LinkMore extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { ...props };
-    }
-
-    render() {
-        return (
-        <a className="link-more" href={ this.state.link }>
-            <span>{ this.state.text }</span>
-        </a>);
-    }
-}
+const LinkMore = props => (
+    <a className="link-more" href={ props.link }>
+        <span>{ props.text }</span>
+    </a>
+);
 
 class ListLink extends Component {
     constructor(props) {

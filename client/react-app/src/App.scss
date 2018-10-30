@@ -209,10 +209,24 @@ nav {
         justify-content: space-around;
         height: inherit;
     }
-    a.home-icon {
+    .home-icon {
         flex: 1 1 auto;
         background-image: url('./assets/home_white_18x18.png');
         background-size: 18px 18px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+    a.home-icon-open {
+        background-image: url('./assets/icon-menu-open.png');
+        background-size: 87px 19px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+    a.home-icon-close {
+        background-image: url('./assets/icon-menu-close.png');
+        background-size: 156px 19px;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: scroll;
@@ -947,13 +961,16 @@ nav {
         border-width: 1px;
     }
     input[type="text"], input[type="email"], select {
-        min-width: 20rem;
+        max-width: 20rem;
+        width: 100%;
     }
     input[type="submit"], select {
         height: 2rem;
+        border-color: #333333;
     }
     textarea {
-        min-width: 20rem;
+        max-width: 20rem;
+        width: 100%;
         min-height: 10rem;
         border-radius: 4px;
     }
@@ -1155,8 +1172,15 @@ a.link-action {
         a.home-icon {
             padding: 1.375rem;
         }
-        a.home-icon:hover {
+        .mobile-menu-toggle {
+            padding: 1.375rem;
+        }
+        a.home-icon-desktop:hover {
             background-image: url('./assets/home_green_18x18.png');
+            background-size: 18px 18px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
         }
     }
 
@@ -1204,6 +1228,19 @@ a.link-action {
 
     .table-of-contents {
         width: 320px;
+    }
+
+    .contact-form {
+        div {
+            flex-flow: column nowrap;
+        }
+        label {
+            text-align: left;
+            justify-content: flex-start;
+        }
+        div.submit-box {
+            margin-left: 0rem;
+        }
     }
 
     #balf-what-we-do {
@@ -1398,7 +1435,7 @@ a.link-action {
     }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 325px) {
     #home-banner-message {
         h1 {
             font-size: 2.2rem;
