@@ -6,14 +6,12 @@ import './App.css';
 import logoMini from './assets/logo-breath-mini-110w.png';
 import logoSmall from './assets/logo-breath-small-360w.png';
 import logoMedium from './assets/logo-breath-main-480w.png';
-import logoBig from './assets/logo-breath-main-680w.png';
-import homeIcon from './assets/home_white_18x18.png';
 import imgBalf from './assets/bal-procedure.png';
 import imgCytology from './assets/bal-cytology.png';
 import imgAero from './assets/llc-aerohippus.png';
 import picLaurent from './assets/picture-laurent-purple-ltr.png';
 import picKathleen from './assets/picture-kathleen-orange-rtl.png';
-import sampleForm from './assets/Equine Lung Experts-BALF cytology request form.pdf';
+import sampleFormBALF from './assets/Equine Lung Experts-BALF cytology request form.pdf';
 
 class App extends Component {
     render() {
@@ -95,14 +93,14 @@ class BalfSample extends Component {
                         <li>Store BALF sample immediately at 2-8 °C until shipped.</li>
                         <li>Pour second aliquot (10 ml) and centrifuge at 300 g for 10 minutes, pour off supernatant and transfer cell pellet on a slide to make a smear.</li>
                         <li>Prepare at least 2 smear slides and dry promptly.</li>
-                        <li><a href={sampleForm} target="_blank">Print and complete "the Cytology Sample Submission Form" (click to download).</a> Insert into package along with the sample, slides, and payment.</li>
+                        <li><a href={sampleFormBALF} target="_blank" rel="noopener noreferrer">Print and complete "the Cytology Sample Submission Form" (click to download).</a> Insert into package along with the sample, slides, and payment.</li>
                     </ol>
                 </div>
 
                 <figure>
-                    <img src={imgBalf} />
+                    <img src={imgBalf} alt="Dr. Ivester retrieving a BALF sample"/>
                     <figcaption>Dr. Ivester retrieving a BALF sample.</figcaption>
-                    <img src={imgCytology} />
+                    <img src={imgCytology} alt="BAL cytology samples" />
                     <figcaption>BAL cytology samples.</figcaption>
                 </figure>
             </div>
@@ -114,7 +112,7 @@ class BalfSample extends Component {
                     <ul>
                         <li>1 BALF aliquot in EDTA tube (~ 5 ml) on ice pack(s) inside a Styrofoam box</li>
                         <li>2 air-dried smear slides placed in a small slide box</li>
-                        <li><a href={sampleForm} target="_blank">BALF cytology sample submission form (click to download)</a></li>
+                        <li><a href={sampleFormBALF} target="_blank" rel="noopener noreferrer">BALF cytology sample submission form (click to download)</a></li>
                     </ul>
                     <span>Shipping Address</span>
                         <ul className="address">
@@ -178,7 +176,7 @@ class EnvironmentalConsulting extends Component {
                 </div>
 
                 <figure id="env-image-aero" className="figure-with-caption">
-                    <img src={imgAero} />
+                    <img src={imgAero} alt="Dr. Coeutil with a patient" />
                     <figcaption>Dr. Couetil with a patient.</figcaption>
                 </figure>
             </div>
@@ -273,16 +271,88 @@ class Contact extends Component {
 }
 
 class ContactForm extends Component {
-    submitContactForm(event) {
-        console.log(event);
+    constructor(props) {
+        super(props);
+        this.state = {
+            pendingResponse: false,
+            messageSent: false,
+            messageStatus: ""
+        };
+
+        this.submitContactForm = this._submitContactForm.bind(this);
+    }
+
+    _submitContactForm(event) {
+        event.preventDefault();
+        const form = document.querySelector("#contact-form");
+        const fdata = new FormData(form);
+        let message = {};
+        for (let [key, value] of fdata.entries()) {
+            message[key] = value;
+        }
+
+        this.setState({
+            pendingResponse: true
+        });
+
+        fetch('https://api.equinelungexperts.com/contact', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify(message)
+        })
+            .then(response => {
+                this.setState({
+                    pendingResponse: false,
+                    messageSent: true,
+                    messageStatus: "SUCCESS"
+                });
+            })
+            .catch(error => {
+                this.setState({
+                    pendingResponse: false,
+                    messageSent: true,
+                    messageStatus: "ERROR"
+                });
+            });
+
+    }
+
+    componentDidMount() {
+        const form = document.querySelector("#contact-form");
+        form.addEventListener('submit', this.submitContactForm);
+    }
+    componentWillUnmount() {
+        const form = document.querySelector("#contact-form");
+        form.removeEventListener('subit', this.submitContactForm);
     }
 
     render() {
+        const submit_message = (this.state.pendingResponse) 
+            ? "Sending Form..." 
+            : "Send Message";
+        let message_box = (<></>);
+
+        if (this.state.messageSent && !this.state.pendingResponse) {
+            const alert = (this.state.messageStatus === "SUCCESS") 
+                ? "Contact information submitted" 
+                : "ERROR: information not submitted";
+            const alert_style = {
+                textAlign: "center",
+                fontWeight: 700,
+                color: (this.state.messageStatus === "SUCCESS") ? "green" : "red"
+            };
+            message_box = (
+                <div style={alert_style}>{alert}</div>
+            );
+        }
+
         return (
-        <div id="contact-form" className="contact-form">
+        <div id="contact-box" className="contact-box">
             <h3>Contact Us</h3>
             <h6>info@equinelungexperts.com</h6>
-            <form action="mailto:info@equinelungexperts.com" method="POST" enctype="text/plain">
+            <form action="https://api.equinelungexperts.com/contact" method="post" id="contact-form" encType="application/json" target="_blank">
                 <div>
                     <label htmlFor="fullname" id="label-fullname">Full Name:*</label>
                     <input type="text" className="contact-name" name="fullname" required></input>
@@ -309,7 +379,8 @@ class ContactForm extends Component {
                 </div>
                 <div className="submit-box">
                     <span>* Required field</span>
-                    <input type="submit" className="contact-submit" value="Send Message" onClick={this.submitContactForm.bind(this)}></input>
+                    {message_box}
+                    <input type="submit" className="contact-submit" value={submit_message}></input>
                 </div>
             </form>
         </div>);

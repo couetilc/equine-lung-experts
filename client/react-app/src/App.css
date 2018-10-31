@@ -697,44 +697,44 @@ nav {
     margin: 0rem 1rem 1rem 4rem;
     padding: .5rem 1rem; }
 
-.contact-form {
+.contact-box {
   padding: 0rem 1rem 1rem 1rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center; }
-  .contact-form h3 {
+  .contact-box h3 {
     margin-left: 0; }
-  .contact-form div {
+  .contact-box div {
     display: flex;
     flex-flow: row nowrap;
     margin: .5rem 0rem; }
-  .contact-form div.submit-box {
+  .contact-box div.submit-box {
     display: flex;
     flex-flow: column nowrap;
     margin-left: 10rem; }
-  .contact-form label {
+  .contact-box label {
     min-width: 10rem;
     text-align: right;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: .5rem; }
-  .contact-form #label-message {
+  .contact-box #label-message {
     align-self: flex-start; }
-  .contact-form input, .contact-form select {
+  .contact-box input, .contact-box select {
     font-size: 1.25rem;
     height: 1.5rem;
     border-radius: 2px;
     padding: .25rem;
     border-style: solid;
     border-width: 1px; }
-  .contact-form input[type="text"], .contact-form input[type="email"], .contact-form select {
+  .contact-box input[type="text"], .contact-box input[type="email"], .contact-box select {
     max-width: 20rem;
     width: 100%; }
-  .contact-form input[type="submit"], .contact-form select {
+  .contact-box input[type="submit"], .contact-box select {
     height: 2rem;
     border-color: #333333; }
-  .contact-form textarea {
+  .contact-box textarea {
     max-width: 20rem;
     width: 100%;
     min-height: 10rem;
@@ -905,12 +905,12 @@ a.link-action {
     text-align: center; }
   .table-of-contents {
     width: 320px; }
-  .contact-form div {
+  .contact-box div {
     flex-flow: column nowrap; }
-  .contact-form label {
+  .contact-box label {
     text-align: left;
     justify-content: flex-start; }
-  .contact-form div.submit-box {
+  .contact-box div.submit-box {
     margin-left: 0rem; }
   #balf-preparing-sample {
     flex-flow: column nowrap; }
