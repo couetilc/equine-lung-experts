@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
+import GoogleAnalytics from 'react-ga';
 import './App.css';
+import withTracker from './components/withTracker.js';
 
 import logoMini from './assets/logo-breath-mini-110w.png';
 import logoSmall from './assets/logo-breath-small-360w.png';
 import logoMedium from './assets/logo-breath-main-480w.png';
-import imgBalf from './assets/bal-procedure.png';
-import imgCytology from './assets/bal-cytology.png';
-import imgAero from './assets/llc-aerohippus.png';
-import picLaurent from './assets/picture-laurent-purple-ltr.png';
-import picKathleen from './assets/picture-kathleen-orange-rtl.png';
+import imgBalf from './assets/bal-procedure.jpg';
+import imgCytology from './assets/bal-cytology.jpg';
+import imgAero from './assets/llc-aerohippus.jpg';
+import picLaurent from './assets/picture-laurent-purple-ltr.jpg';
+import picKathleen from './assets/picture-kathleen-orange-rtl.jpg';
 import sampleFormBALF from './assets/Equine Lung Experts-BALF cytology request form.pdf';
+
+GoogleAnalytics.initialize('UA-128468629-1');
 
 class App extends Component {
     render() {
@@ -31,12 +35,12 @@ class MainPage extends Component {
             <NavMobile />
 
             <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/balfsample' component={BalfSample} />
-                <Route path='/environmentalconsulting' component={EnvironmentalConsulting} />
-                <Route path='/resources' component={Resources} />
-                <Route path='/contact' component={Contact} />
-                <Route component={PageNotFound} />
+                <Route exact path='/' component={withTracker(Home)} />
+                <Route path='/balfsample' component={withTracker(BalfSample)} />
+                <Route path='/environmentalconsulting' component={withTracker(EnvironmentalConsulting)} />
+                <Route path='/resources' component={withTracker(Resources)} />
+                <Route path='/contact' component={withTracker(Contact)} />
+                <Route component={withTracker(PageNotFound)} />
             </Switch>
 
             <Footer />
@@ -297,6 +301,7 @@ class ContactForm extends Component {
 
         fetch('https://api.equinelungexperts.com/contact', {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             },
@@ -332,6 +337,9 @@ class ContactForm extends Component {
         const submit_message = (this.state.pendingResponse) 
             ? "Sending Form..." 
             : "Send Message";
+        const is_submit_disabled = (this.state.pendingResponse) 
+            ? true 
+            : false;
         let message_box = (<></>);
 
         if (this.state.messageSent && !this.state.pendingResponse) {
@@ -354,33 +362,33 @@ class ContactForm extends Component {
             <h6>info@equinelungexperts.com</h6>
             <form action="https://api.equinelungexperts.com/contact" method="post" id="contact-form" encType="application/json" target="_blank">
                 <div>
-                    <label htmlFor="fullname" id="label-fullname">Full Name:*</label>
-                    <input type="text" className="contact-name" name="fullname" required></input>
+                    <label htmlFor="input-fullname" id="label-fullname">Full Name:*</label>
+                    <input type="text" className="contact-name" id="input-fullname" name="fullname" required></input>
                 </div>
                 <div>
-                    <label htmlFor="email" id="label-email">Email:*</label>
-                    <input type="email" className="contact-email" name="email" required></input>
+                    <label htmlFor="input-email" id="label-email">Email:*</label>
+                    <input type="email" className="contact-email" id="input-email" name="email" required></input>
                 </div>
                 <div>
-                    <label htmlFor="phone" id="label-phone">Phone Number:*</label>
-                    <input type="text" className="contact-phone" name="phone" required></input>
+                    <label htmlFor="input-phone" id="label-phone">Phone Number:*</label>
+                    <input type="text" className="contact-phone" id="input-phone" name="phone" required></input>
                 </div>
                 <div>
-                    <label htmlFor="subject" id="label-subject">Subject:*</label>
-                    <select name="subject" className="contact-subject" required>
+                    <label htmlFor="select-subject" id="label-subject">Subject:*</label>
+                    <select name="subject" className="contact-subject" id="select-subject" required>
                         <option value="submit-a-balf-sample">Submit a BALF sample</option>
                         <option value="schedule-environmental-consulting">Schedule an environmental evaluation</option>
                         <option value="ask-a-question">Ask a question</option>
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="message" id="label-message">Message:*</label>
-                    <textarea className="contact-message" name="message" required></textarea>
+                    <label htmlFor="textarea-message" id="label-message">Message:*</label>
+                    <textarea className="contact-message" id="textarea-message" name="message" required></textarea>
                 </div>
                 <div className="submit-box">
                     <span>* Required field</span>
                     {message_box}
-                    <input type="submit" className="contact-submit" value={submit_message}></input>
+                    <input type="submit" className="contact-submit" value={submit_message} disabled={is_submit_disabled}></input>
                 </div>
             </form>
         </div>);

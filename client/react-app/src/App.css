@@ -70,7 +70,7 @@ p {
   font-family: Helvetica, Arial, sans-serif; }
 
 #app {
-  background: url("./assets/page-background.png");
+  background: url("./assets/page-background.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -155,8 +155,8 @@ nav {
   align-items: center; }
 
 #home-banner {
-  background-image: url("./assets/Indiana-Grand-racetrack.png");
-  background-image: linear-gradient(120deg, transparent, #333333), url("./assets/Indiana-Grand-racetrack.png");
+  background-image: url("./assets/Indiana-Grand-racetrack.jpg");
+  background-image: linear-gradient(120deg, transparent, #333333), url("./assets/Indiana-Grand-racetrack.jpg");
   position: relative; }
 
 .banner {
@@ -384,7 +384,7 @@ nav {
     margin: 1rem; }
 
 #balf-sample-banner {
-  background-image: url("./assets/bal-procedure.png");
+  background-image: url("./assets/bal-procedure.jpg");
   height: 20.25rem;
   width: 48rem;
   align-self: flex-end; }
