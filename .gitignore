@@ -1,3 +1,6 @@
+# next.js cache
+.next
+
 # confidential
 .env
 
