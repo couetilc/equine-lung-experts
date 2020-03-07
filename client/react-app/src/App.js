@@ -111,7 +111,7 @@ class BalfSample extends Component {
 
             <div id="balf-ship-cost-sample">
                 <div id="balf-shipping-sample">
-                    <h3>Shipping a Sample*</h3>
+                  <h3>Shipping a Sample<span>*</span></h3>
                     <span>Required Items</span>
                     <ul>
                         <li>1 BALF aliquot in EDTA tube (~ 5 ml) on ice pack(s) inside a Styrofoam box</li>
@@ -131,8 +131,10 @@ class BalfSample extends Component {
                 </div>
 
                 <div id="balf-cost-sample">
-                    <h3>Cost for Service</h3>
-                    <span>Fee: $150 per horse.**†</span>
+                    <h3>Cost for Service<span>**†</span></h3>
+                    <span>
+                      For more information contact <a href="mailto:equinelungexperts@gmail.com">equinelungexperts@gmail.com</a>
+                    </span>
                     <ul>
                         <li>** <em>Fee is payable at the time of sample submission or upon receipt of invoice. We accept checks made payable to “Equine Lung Experts, LLC”.</em></li>
                         <li>† <em>Invoices not paid within thirty (30) days of the invoice date shall be charged a late fee equal to 1.5 % per month of the total unpaid balance.</em></li>

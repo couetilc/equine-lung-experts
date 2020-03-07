@@ -720,12 +720,12 @@ nav {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    text-align: center;
 
     span {
         font-size: 1.5rem;
         align-self: center;
         font-weight: 400;
-        text-decoration: underline;
         margin: 0rem 0rem 1rem 0rem;
     }
     li {
@@ -1254,6 +1254,10 @@ a.link-action {
         flex-flow: column nowrap;
         > div {
             width: auto;
+        }
+        h3 span {
+          font-size: 1rem;
+          float: right;
         }
     }
 

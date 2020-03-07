@@ -542,12 +542,12 @@ nav {
   color: #333333;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center; }
+  align-items: center;
+  text-align: center; }
   #balf-cost-sample span {
     font-size: 1.5rem;
     align-self: center;
     font-weight: 400;
-    text-decoration: underline;
     margin: 0rem 0rem 1rem 0rem; }
   #balf-cost-sample li {
     margin: .5rem; }
@@ -918,6 +918,9 @@ a.link-action {
     flex-flow: column nowrap; }
     #balf-ship-cost-sample > div {
       width: auto; }
+    #balf-ship-cost-sample h3 span {
+      font-size: 1rem;
+      float: right; }
   .article-list {
     margin: 0; }
     .article-list li {
