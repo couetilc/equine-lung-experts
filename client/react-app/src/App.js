@@ -561,7 +561,7 @@ class HomeBanner extends Component {
     constructor(props) {
         super(props);
         this.state = { default: {
-            titleA: "BREATH EASIER",
+            titleA: "BREATHE EASIER",
             titleB: "MOVE FASTER",
             content: "Respiratory diseases cause coughing and poor performance in racing, sport and recreational horses. Through diagnostic services, the veterinary scientists at Equine Lung Experts will help you diagnose and treat respiratory diseases caused by infections or environmental exposures.",
             action: {
