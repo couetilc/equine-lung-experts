@@ -10,8 +10,8 @@ import React, { Component } from 'react';
 // import GoogleAnalytics from 'react-ga';
 import ContactForm from '../components/ContactForm';
 
-import picLaurent from '../assets/picture-laurent-purple-ltr.jpg';
-import picKathleen from '../assets/picture-kathleen-orange-rtl.jpg';
+const picLaurent = '/picture-laurent-purple-ltr.jpg';
+const picKathleen = '/picture-kathleen-orange-rtl.jpg';
 
 // GoogleAnalytics.initialize('UA-128468629-1');
 

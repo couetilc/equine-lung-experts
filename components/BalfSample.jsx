@@ -2,9 +2,10 @@
 /* eslint-disable max-len */
 /* eslint-disable space-before-function-paren */
 /* eslint-disable react/jsx-one-expression-per-line */
-import imgBalf from '../assets/bal-procedure.jpg';
-import imgCytology from '../assets/bal-cytology.jpg';
-import sampleFormBALF from '../assets/Equine Lung Experts-BALF cytology request form.pdf';
+
+const imgBalf = '/bal-procedure.jpg';
+const imgCytology = '/bal-cytology.jpg';
+const sampleFormBALF = '/Equine Lung Experts-BALF cytology request form.pdf';
 
 function BalfSample () {
   return (

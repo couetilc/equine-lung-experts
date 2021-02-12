@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable max-len */
-import imgAero from '../assets/llc-aerohippus.jpg';
+const imgAero = '/llc-aerohippus.jpg';
 
 export default function EnvironmentalConsulting() {
   return (
