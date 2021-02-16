@@ -3,8 +3,6 @@ name: ELE
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
   # Maybe do this instead
   # release:
     # types: [created]
