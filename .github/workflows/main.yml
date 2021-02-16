@@ -1,11 +1,8 @@
-name: ELE
+name: ELE.com Deploy Steps
 
 on:
-  push:
-    branches: [ master ]
-  # Maybe do this instead
-  # release:
-    # types: [created]
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
