@@ -1,3 +1,6 @@
+# next.js build
+out
+
 # next.js cache
 .next
 

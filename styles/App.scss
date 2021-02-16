@@ -155,7 +155,7 @@ p {
     @include mx-font-content;
 }
 
-#app {
+#app, #__next {
     background: url("../public/page-background.jpg");
     background-size: cover;
     height: 100%;
