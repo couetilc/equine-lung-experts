@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable space-before-function-paren */
 /* eslint-disable react/jsx-one-expression-per-line */
+import { EMAIL } from './ContactForm';
 
 const imgBalf = '/bal-procedure.jpg';
 const imgCytology = '/bal-cytology.jpg';
@@ -34,7 +35,7 @@ function BalfSample () {
           <li>A report is provided describing microscopic appearance of the submission including cellularity, differential cell count (based on minimum 400 cells), mucus characteristics, and overall cytologic interpretation. When appropriate, comments regarding etiology are provided.</li>
           <li>Cytology interpretation will be reported within 1-2 working days after receipt of the sample.</li>
         </ul>
-        <span>As part of the service, we offer a free phone consultation (up to 15 min) for each horse sample submitted to Equine Lung Experts. Contact <a href="/contact">info@equinelungexperts.com</a> to set up an appointment.</span>
+        <span>As part of the service, we offer a free phone consultation (up to 15 min) for each horse sample submitted to Equine Lung Experts. Contact <a href="/contact">{EMAIL}</a> to set up an appointment.</span>
       </div>
 
       <div id="balf-preparing-sample">

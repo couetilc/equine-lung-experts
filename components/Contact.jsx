@@ -1,7 +1,7 @@
 /* eslint-disable eol-last */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/react-in-jsx-scope */
-import ContactForm from './ContactForm';
+import ContactForm, { EMAIL } from './ContactForm';
 
 export default function Contact() {
   return (
@@ -9,7 +9,11 @@ export default function Contact() {
       <div id="contact-tagline" className="tagline">
         <div className="tagline-content">
           <h1>Contact Us</h1>
-          <h5>Equine Lung Experts can be contacted by filling out the form below. Otherwise, please direct inquiries to <a href="mailto:info@equinelungexperts.com">info@equinelungexperts.com</a></h5>
+          <h5>
+            Equine Lung Experts can be contacted by filling out the form below.
+            Please direct inquiries to:
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </h5>
         </div>
       </div>
       <ContactForm />

@@ -960,11 +960,12 @@ nav {
         border-style: solid;
         border-width: 1px;
     }
-    input[type="text"], input[type="email"], select {
+    input[type="text"], input[type="email"], input[type="submit"], select {
         max-width: 20rem;
         width: 100%;
     }
     input[type="submit"], select {
+        float: right;
         height: 2rem;
         border-color: #333333;
     }

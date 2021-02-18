@@ -1,5 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable max-len */
+import { EMAIL } from './ContactForm';
+
 const imgAero = '/llc-aerohippus.jpg';
 
 export default function EnvironmentalConsulting() {
@@ -33,7 +35,12 @@ export default function EnvironmentalConsulting() {
 
           <div id="env-request-services">
             <h3>How to Request Counseling Services</h3>
-            <div>Please contact Equine Lung Experts by email (info@equinelungexperts.com) to discuss the type of service desired.  We will respond to the email within 1-2 working days.</div>
+            <div>
+              Please contact Equine Lung Experts by email (
+              <a href="/contact">{EMAIL}</a>
+              ) to discuss the type of service desired.  We will respond to the
+              email within 1-2 working days.
+            </div>
           </div>
         </div>
 
