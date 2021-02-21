@@ -1,6 +1,3 @@
-/* eslint-disable eol-last */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/react-in-jsx-scope */
 import ContactForm, { EMAIL } from './ContactForm';
 
 export default function Contact() {

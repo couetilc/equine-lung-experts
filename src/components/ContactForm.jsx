@@ -1,16 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable camelcase */
-/* eslint-disable react/sort-comp */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable react/jsx-first-prop-new-line */
-/* eslint-disable react/jsx-max-props-per-line */
-/* eslint-disable react/jsx-one-expression-per-line */
 export const EMAIL = 'equinelungexperts@gmail.com';
 
 export default function ContactForm() {

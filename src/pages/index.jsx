@@ -1,11 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable max-classes-per-file */
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable jsx-quotes */
-/* eslint-disable no-use-before-define */
-/* eslint-disable import/extensions */
 import React, { Component } from 'react';
 // import GoogleAnalytics from 'react-ga';
 import ContactForm from '../components/ContactForm';

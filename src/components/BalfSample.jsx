@@ -1,7 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable max-len */
-/* eslint-disable space-before-function-paren */
-/* eslint-disable react/jsx-one-expression-per-line */
 import { EMAIL } from './ContactForm';
 
 const imgBalf = '/bal-procedure.jpg';

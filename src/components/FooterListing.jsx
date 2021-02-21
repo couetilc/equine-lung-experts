@@ -1,7 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable max-classes-per-file */
 import Link from 'next/link';
 import { Component } from 'react';
 

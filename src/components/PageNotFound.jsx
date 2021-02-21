@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 export default function PageNotFound() {
   return (
     <div id="page-404" className="blank-page">

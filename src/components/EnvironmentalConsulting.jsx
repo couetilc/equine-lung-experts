@@ -1,5 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable max-len */
 import { EMAIL } from './ContactForm';
 
 const imgAero = '/llc-aerohippus.jpg';

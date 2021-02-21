@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint src/**/*.{js,jsx}",
     "dev": "next",
     "build": "next build && next export",
     "start": "next start"
@@ -19,6 +19,9 @@
     "url": "https://github.com/couetilc/equine-lung-experts/issues"
   },
   "homepage": "https://github.com/couetilc/equine-lung-experts#readme",
+  "engines": {
+    "node": ">=12"
+  },
   "dependencies": {
     "next": "^10.0.6",
     "react": "^17.0.1",
@@ -26,11 +29,13 @@
     "sass": "^1.32.7"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.20.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-cc-lint": "^1.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

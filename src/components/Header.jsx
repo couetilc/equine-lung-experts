@@ -1,5 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable jsx-quotes */
 import Link from 'next/link';
 
 const logoMini = '/logo-breath-mini-110w.png';

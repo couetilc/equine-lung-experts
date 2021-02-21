@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable react/react-in-jsx-scope */
 export default function Resources() {
   return (
     <div id="resources-page" className="blank-page">

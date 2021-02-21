@@ -1,13 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable no-lonely-if */
-/* eslint-disable camelcase */
-/* eslint-disable quotes */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/sort-comp */
-/* eslint-disable no-confusing-arrow */
-/* eslint-disable jsx-quotes */
-/* eslint-disable no-underscore-dangle */
 import { Component } from 'react';
 import Link from './Link';
 

@@ -1,7 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable quotes */
 import { Component } from 'react';
 import FooterListing from './FooterListing';
 
