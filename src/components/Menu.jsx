@@ -19,7 +19,7 @@ export default function Menu({ children }) {
       <Item href="/contact">Contact Us</Item>
       <Item href="/balfsample">Submit a Sample</Item>
       <Item href="/environmentalconsulting">Environmental Consulting</Item>
-      <Item href="resources">Resources</Item>
+      <Item href="/resources">Resources</Item>
       {children}
     </Layout>
   );

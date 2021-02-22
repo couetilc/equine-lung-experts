@@ -159,11 +159,12 @@ class PeopleSummary extends Component {
 }
 
 class Bio extends Component {
-  constructor({ rtl, ...others }) {
-    super({ rtl, ...others });
+  constructor(props) {
+    super(props);
+    const { rtl, ...rest } = props;
     this.state = {
       classes: `bio${rtl ? ' bio-rtl' : ' bio-ltr'}`,
-      ...others,
+      ...rest,
     };
   }
 
