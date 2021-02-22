@@ -1183,6 +1183,9 @@ a.link-action {
             background-repeat: no-repeat;
             background-attachment: scroll;
         }
+        a.home-icon-mobile:hover {
+            background-image: url('../../public/home_green_18x18.png');
+        }
     }
 
     #service-summary {
