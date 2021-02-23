@@ -1,3 +1,5 @@
+import TOC from './TOC';
+
 export default function Resources() {
   return (
     <div id="resources-page" className="blank-page">
@@ -8,24 +10,24 @@ export default function Resources() {
           <a href="/contact">Contact us →</a>
         </div>
 
-        <div className="table-of-contents">
-          <span>Table of Contents</span>
+        <TOC>
           <a href="#educational-resources">Educational Materials</a>
           <a href="#articles-resources">Articles by the Experts</a>
-        </div>
+        </TOC>
       </div>
 
-      <div id="educational-resources">
-        <h3>Educational Materials</h3>
-        <ol>
-          <li className="resource">
-            <a className="resource-title" href="https://vet.purdue.edu/esmc/pulmonary-function.php">Pulmonary Function Testing</a>
-          </li>
-          <li className="resource">
-            <a className="resource-title" href="https://vet.purdue.edu/esmc/index.php">Purdue Equine Sports Medicine Center Website</a>
-          </li>
-        </ol>
-      </div>
+      <h3 id="educational-resources">
+        Educational Materials
+      </h3>
+      <ResourceList>
+        <Resource href="https://vet.purdue.edu/esmc/pulmonary-function.php">
+          Pulmonary Function Testing
+        </Resource>
+        <Resource href="https://vet.purdue.edu/esmc/index.php">
+          Purdue Equine Sports Medicine Center Website
+        </Resource>
+      </ResourceList>
+
       <div id="articles-resources">
         <h3>Articles by Dr. Couetil and Dr. Ivester</h3>
 
@@ -132,6 +134,24 @@ export default function Resources() {
         </ArticleList>
       </div>
     </div>
+  );
+}
+
+function ResourceList({ children }) {
+  return (
+    <ol className="resource-list">
+      {children}
+    </ol>
+  );
+}
+
+function Resource({ href, children }) {
+  return (
+    <li className="resource">
+      <a className="resource-title" href={href}>
+        {children}
+      </a>
+    </li>
   );
 }
 

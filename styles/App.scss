@@ -496,33 +496,6 @@ nav {
     }
 }
 
-#balf-sample-page {
-    display: flex;
-    flex-flow: column nowrap;
-
-    h1 {
-    }
-    h2 {
-        font-size: 2.25rem;
-        border-bottom: none;
-        text-decoration: underline;
-    }
-    h3 {
-        margin: 1rem 1rem 1rem 1rem;
-    }
-    h4 {
-        font-size: 1.5rem;
-        margin: 1rem;
-        color: $color-bg-grey-dark;
-    }
-    h5 {
-        margin: 0 1rem .5rem 1rem;
-    }
-    h6 {
-        margin: 1rem;
-    }
-}
-
 #balf-sample-banner {
     background-image: url("../public/bal-procedure.jpg");
     height: $height-banner * .75;
@@ -545,13 +518,14 @@ nav {
     flex: 0 0 auto;
     @include mx-font-content-alt;
 
-    > span {
+    > h1 {
         margin: 0 0 .5rem 0;
         font-size: 1.5rem;
         color: $color-blue-darkest;
         width: 100%;
         border-bottom: 2px solid $color-blue-dark;
         font-family: Verdana;
+        font-weight: normal;
     }
     > a {
         flex: 0 0 auto;
@@ -571,39 +545,11 @@ nav {
     > a:hover {
         color: $color-blue-dark;
     }
-}
-
-.table-of-contents-bar {
-    background-color: $color-faded-blue;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-
-    > span {
-        margin: 0 0 0 1rem;
-        font-size: 1.5rem;
-        color: $color-bg-grey-dark;
+    @media all and (max-width: 760px) {
+        width: 320px;
     }
-    > a {
-        text-decoration: none;
-        font-size: 1.125rem;
-        padding: .5rem;
-        color: $color-bg-grey-light;
-    }
-    > a::before {
-        content: "➤";
-        font-weight: 400;
-        font-size: 1rem;
-        padding: .5rem;
-        color: $color-blue;
-    }
-}
-
-#balf-tagline {
-    a {
-        font-size: 1.25rem;
+    @media all and (max-width: 480px) {
+        width: 250px;
     }
 }
 
@@ -755,40 +701,6 @@ nav {
     }
 }
 
-#env-consulting-page {
-    display: flex;
-    flex-flow: column nowrap;
-    
-    h1 {
-        font-size: 2.375rem;
-    }
-    h2 {
-        font-size: 2.25rem;
-        border-bottom: none;
-        text-decoration: underline;
-    }
-    h3 {
-        margin: 1rem 1rem 1rem 1rem;
-    }
-    h4 {
-        font-size: 1.5rem;
-        margin: 1rem;
-        color: $color-bg-grey-dark;
-    }
-    h5 {
-        margin: 0 1rem .5rem 1rem;
-    }
-    h6 {
-        margin: 1rem;
-    }
-}
-
-#env-tagline {
-    a {
-        font-size: 1.25rem;
-    }
-}
-
 #env-what-we-do {
     display: flex;
     flex-flow: column nowrap;
@@ -864,14 +776,12 @@ nav {
     }
 }
 
-#educational-resources {
-    ol {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        margin: 0rem 1rem;
-        @include mx-font-banner-content;
-    }
+.resource-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0rem 1rem;
+  @include mx-font-banner-content;
 }
 
 .resource {
@@ -1138,14 +1048,6 @@ a.link-action {
             margin: 0rem 2.5rem 1rem 2.5rem;
         }
     }
-
-    #env-consulting-page {
-        #env-tagline {
-        }
-
-        .table-of-contents {
-        }
-    }
 }
 
 @media all and (max-width: 760px) {
@@ -1228,10 +1130,6 @@ a.link-action {
         h1 {
             text-align: center;
         }
-    }
-
-    .table-of-contents {
-        width: 320px;
     }
 
     .contact-box {
@@ -1379,10 +1277,6 @@ a.link-action {
         width: auto;
         padding: 0 0 0 1rem;
         margin: .5rem 0;
-    }
-
-    .table-of-contents {
-        width: 250px;
     }
 
     #balf-what-we-do {

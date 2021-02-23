@@ -1,4 +1,5 @@
 import { EMAIL } from './ContactForm';
+import TOC from './TOC';
 
 const imgBalf = '/bal-procedure.jpg';
 const imgCytology = '/bal-cytology.jpg';
@@ -15,13 +16,12 @@ function BalfSample () {
           <a href="/#people-summary">Meet the experts →</a>
         </div>
 
-        <div className="table-of-contents">
-          <span>Key Information</span>
+        <TOC title="Key Information">
           <a href="#balf-what-we-do">What We Do</a>
           <a href="#balf-preparing-sample">Preparing Samples</a>
           <a href="#balf-shipping-sample">Shipping Samples</a>
           <a href="#balf-cost-sample">Pricing</a>
-        </div>
+        </TOC>
       </div>
 
       <div id="balf-what-we-do">

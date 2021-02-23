@@ -1,4 +1,5 @@
 import { EMAIL } from './ContactForm';
+import TOC from './TOC';
 
 const imgAero = '/llc-aerohippus.jpg';
 
@@ -12,12 +13,11 @@ export default function EnvironmentalConsulting() {
           <a href="/#people-summary">Meet the experts →</a>
         </div>
 
-        <div className="table-of-contents">
-          <span>Key Information</span>
+        <TOC title="Key Information">
           <a href="#env-what-we-do">What We Do</a>
           <a href="#env-request-services">Request Services</a>
           <a href="#env-cost-service">Pricing</a>
-        </div>
+        </TOC>
       </div>
 
       <div className="inline-image">
