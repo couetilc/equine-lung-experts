@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint src/**/*.{js,jsx}",
+    "test": "eslint .",
     "dev": "next",
     "build": "next build && next export",
     "start": "next start"
