@@ -35,8 +35,11 @@ Styling is added using global [SASS](https://sass-lang.com/) stylesheets,
 stored in directory `styles` and imported in `pages/_app.jsx`
 ([Click for Next.js Docs](https://nextjs.org/docs/basic-features/built-in-css-support#adding-a-global-stylesheet))
 
+## Analytics
+
+Site analytics are collected by [Plausible.io](https://plausible.io).
+
 TODO
-- consider Google Analytics, or other analytics for the website
 - dependabot
     https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates
     https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates#about-the-dependabotyml-file
