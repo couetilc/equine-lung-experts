@@ -36,14 +36,13 @@ stored in directory `styles` and imported in `pages/_app.jsx`
 ([Click for Next.js Docs](https://nextjs.org/docs/basic-features/built-in-css-support#adding-a-global-stylesheet))
 
 TODO
-- add links to those two papers (1st and third from email)
-- Add links to social media (instagram, facebook, linkedin, twitter)
 - consider Google Analytics, or other analytics for the website
+- dependabot
+    https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates
+    https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates#about-the-dependabotyml-file
 
 TODO
-- How should I manage image assets? next/image?
-- automated deployments!!
-- SASS design system, and clean up styling + components.
+- How should I manage image assets? next/image? Need to optimize banner image
 - consider snapshot testing whole site to make CI/CD seamless by merging Github
   PRs from dependabot automatically if all tests pass. (or auto deploy to a
   staging website and then approve to deploy to production domain?)

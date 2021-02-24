@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-// import GoogleAnalytics from 'react-ga';
 import ContactForm from '../components/ContactForm';
 
 const picLaurent = '/picture-laurent-purple-ltr.jpg';
 const picKathleen = '/picture-kathleen-orange-rtl.jpg';
 
-// GoogleAnalytics.initialize('UA-128468629-1');
-
-export default class Home extends Component {
-  render() {
-    return ([
-      <HomeBanner key="homebanner" />,
-      <HomeContent key="homecontent" />,
-    ]);
-  }
+export default function Home () {
+  return (
+    <>
+      <HomeBanner />
+      <HomeContent />
+    </>
+  );
 }
 
 class HomeBanner extends Component {
