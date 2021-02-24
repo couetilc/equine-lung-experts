@@ -3,33 +3,56 @@ import Link from './Link';
 
 export default function Menu({ children }) {
   const [desktop, setDesktop] = useState(true);
+  const updateLayout = useCallback(() => {
+    if (typeof window !== 'undefined') setDesktop(window.innerWidth > 760);
+  }, []);
   useEffect(() => {
-    const updateLayout = () => {
-      const isDesktop = window.innerWidth > 760;
-      if (desktop !== isDesktop) setDesktop(isDesktop);
-    };
+    updateLayout();
     window.addEventListener('resize', updateLayout);
     return () => window.removeEventListener('resize', updateLayout);
-  }, [desktop]);
+  }, [updateLayout]);
   const Layout = useMemo(() => desktop ? Desktop : Mobile, [desktop]);
   return (
     <Layout>
-      <Item href="/#service-summary">Services</Item>
-      <Item href="/#people-summary">About Us</Item>
-      <Item href="/contact">Contact Us</Item>
-      <Item href="/balfsample">Submit a Sample</Item>
-      <Item href="/environmentalconsulting">Environmental Consulting</Item>
-      <Item href="/resources">Resources</Item>
       {children}
     </Layout>
   );
 }
 
-function Item({ href, children }) {
+function Links(props) {
   return (
-    <li className="nav-menu-item">
-      <Link href={href}>{children}</Link>
-    </li>
+    <>
+      <li className="nav-menu-item">
+        <Link href="/#service-summary" {...props}>
+          Services
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link href="/#people-summary" {...props}>
+          About Us
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link href="/contact" {...props}>
+          Contact Us
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link href="/balfsample" {...props}>
+          Submit a Sample
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link href="/environmentalconsulting" {...props}>
+          Environmental Consulting
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link href="/resources" {...props}>
+          Resources
+        </Link>
+      </li>
+    </>
   );
 }
 
@@ -39,6 +62,7 @@ function Desktop({ children }) {
       <li className="nav-menu-toggle">
         <Link className="home-icon home-icon-desktop" href='/' />
       </li>
+      <Links />
       {children}
     </ul>
   );
@@ -60,11 +84,12 @@ function Mobile({ children }) {
       { clicked &&
         <>
           <li className="nav-menu-toggle">
-            <Link className="home-icon home-icon-mobile" href='/' />
+            <Link onClick={toggle} className="home-icon home-icon-mobile" href='/' />
           </li>
-          {children}
+          <Links onClick={toggle} />
         </>
       }
+      {children}
     </ul>
   );
 }
