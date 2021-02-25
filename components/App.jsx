@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-import NavMobile from './NavMobile';
+import Menu from './Menu';
 import Footer from './Footer';
 import Analytics from './Analytics';
 
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
         <Analytics />
       </Head>
       <Header />
-      <NavMobile />
+      <Menu />
       <Component {...pageProps} />
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
+import SocialTray, { Twitter, Instagram, Facebook } from './SocialTray';
 import Link from './Link';
 
 export default function Menu({ children }) {
@@ -13,9 +14,11 @@ export default function Menu({ children }) {
   }, [updateLayout]);
   const Layout = useMemo(() => desktop ? Desktop : Mobile, [desktop]);
   return (
-    <Layout>
-      {children}
-    </Layout>
+    <nav id='menu-bar'>
+      <Layout>
+        {children}
+      </Layout>
+    </nav>
   );
 }
 
@@ -51,6 +54,13 @@ function Links(props) {
         <Link href="/resources" {...props}>
           Resources
         </Link>
+      </li>
+      <li>
+        <SocialTray>
+          <Twitter />
+          <Instagram />
+          <Facebook />
+        </SocialTray>
       </li>
     </>
   );

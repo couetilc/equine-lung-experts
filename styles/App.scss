@@ -208,6 +208,7 @@ nav {
     }
     .home-icon {
         flex: 1 1 auto;
+        padding: .5rem;
         background-image: url('../public/home_white_18x18.png');
         background-size: 18px 18px;
         background-position: center;
@@ -244,6 +245,62 @@ nav {
     }
     a.selected-home {
         background-image: url('../public/home_green_18x18.png');
+    }
+    .social-icon {
+      padding: 0;
+      margin: 0 2px;
+      height: 32px !important;
+      width: 32px !important;
+    }
+    .social-svg {
+      margin: 2px;
+      height: 28px !important;
+      width: 28px !important;
+    }
+
+    @media all and (max-width: 760px) {
+        height: auto;
+
+        ul {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        ul.nodisplay-mobile {
+        /*    display: none;*/
+        }
+        ul li {
+            font-size: 1.5rem;
+            width: 100%;
+            background-color: $color-bg-grey-light;
+        }
+        a {
+        }
+        a:hover {
+            border-bottom: none;
+            color: $color-green;
+        }
+        a.home-icon {
+            padding: 1.375rem;
+        }
+        .mobile-menu-toggle {
+            padding: 1.375rem;
+        }
+        a.home-icon-desktop:hover {
+            background-image: url('../public/home_green_18x18.png');
+            background-size: 18px 18px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+        a.home-icon-mobile:hover {
+            background-image: url('../public/home_green_18x18.png');
+        }
+        .social-tray {
+          padding: .5rem;
+        }
+        .social-icon {
+          margin: 0 .5rem;
+        }
     }
 }
 
@@ -1021,45 +1078,6 @@ a.service-link {
 }
 
 @media all and (max-width: 760px) {
-    nav {
-        height: auto;
-
-        ul {
-            display: flex;
-            flex-flow: column nowrap;
-        }
-        ul.nodisplay-mobile {
-        /*    display: none;*/
-        }
-        ul li {
-            font-size: 1.5rem;
-            width: 100%;
-            background-color: $color-bg-grey-light;
-        }
-        a {
-        }
-        a:hover {
-            border-bottom: none;
-            color: $color-green;
-        }
-        a.home-icon {
-            padding: 1.375rem;
-        }
-        .mobile-menu-toggle {
-            padding: 1.375rem;
-        }
-        a.home-icon-desktop:hover {
-            background-image: url('../public/home_green_18x18.png');
-            background-size: 18px 18px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-        }
-        a.home-icon-mobile:hover {
-            background-image: url('../public/home_green_18x18.png');
-        }
-    }
-
     #service-summary {
         flex-flow: column nowrap;
 
