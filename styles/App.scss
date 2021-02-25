@@ -365,7 +365,7 @@ nav {
     justify-content: space-around;
     padding: 0rem 1rem;
 
-    .summary-item {
+    .service-item {
         flex: 1 1 auto;
         width: 50%;
         display: flex;
@@ -901,7 +901,7 @@ a.link-more {
     }
 }
 
-a.link-action {
+a.service-link {
     text-decoration: none;
     width: max-content;
     color: $color-faded-green;
@@ -977,7 +977,7 @@ a.link-action {
     }
 
     #service-summary {
-        .summary-item {
+        .service-item {
             padding: 0rem;
 
             p {
@@ -1063,7 +1063,7 @@ a.link-action {
     #service-summary {
         flex-flow: column nowrap;
 
-        .summary-item {
+        .service-item {
             width: 100%;
 
             p {
