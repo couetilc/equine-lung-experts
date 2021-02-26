@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'cc-lint/react'
+    'cc-react'
   ],
   parserOptions: {
     ecmaFeatures: {
