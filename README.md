@@ -40,9 +40,8 @@ stored in directory `styles` and imported in `pages/_app.jsx`
 Site analytics are collected by [Plausible.io](https://plausible.io).
 
 TODO
-- dependabot
-    https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates
-    https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates#about-the-dependabotyml-file
+- add workflow that takes screenshots of the website whenever a PR is made
+  against master and posts those images as a comment in the PR.
 
 TODO
 - How should I manage image assets? next/image? Need to optimize banner image
