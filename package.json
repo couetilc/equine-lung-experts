@@ -31,10 +31,10 @@
   },
   "devDependencies": {
     "eslint": "^7.20.0",
-    "eslint-config-cc-lint": "^1.0.0",
+    "eslint-config-cc-react": "^1.0.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
