@@ -36,22 +36,22 @@ function Links(props) {
         </Link>
       </li>
       <li className="nav-menu-item">
-        <Link href="/contact" {...props}>
+        <Link href="/contact.html" {...props}>
           Contact Us
         </Link>
       </li>
       <li className="nav-menu-item">
-        <Link href="/balfsample" {...props}>
+        <Link href="/balfsample.html" {...props}>
           Submit a Sample
         </Link>
       </li>
       <li className="nav-menu-item">
-        <Link href="/environmentalconsulting" {...props}>
+        <Link href="/environmentalconsulting.html" {...props}>
           Environmental Consulting
         </Link>
       </li>
       <li className="nav-menu-item">
-        <Link href="/resources" {...props}>
+        <Link href="/resources.html" {...props}>
           Resources
         </Link>
       </li>
