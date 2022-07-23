@@ -77,7 +77,7 @@ function ServiceSummary () {
         <h3>
           BALF Interpretation and  Diagnostics
         </h3>
-        <Link className="service-link" href="/balfsample">
+        <Link className="service-link" href="/balfsample.html">
           Submit Sample
         </Link>
         <p>
@@ -92,7 +92,7 @@ function ServiceSummary () {
         <h3>
           Environmental Exposure Counseling
         </h3>
-        <Link className="service-link" href="/environmentalconsulting">
+        <Link className="service-link" href="/environmentalconsulting.html">
           Schedule Evaluation
         </Link>
         <p>
