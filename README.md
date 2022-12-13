@@ -48,3 +48,28 @@ TODO
 - consider snapshot testing whole site to make CI/CD seamless by merging Github
   PRs from dependabot automatically if all tests pass. (or auto deploy to a
   staging website and then approve to deploy to production domain?)
+
+
+# Docker Steps
+
+## Setup and Development
+
+Install python and pipenv
+
+```
+# executable will be availabe under name "python3"
+brew install python
+python3 -m pip install pipenv
+```
+
+Install project dependencies
+
+```
+python3 -m pipenv install
+```
+
+Start virtual environment
+
+```
+python3 -m pipenv shell
+```
