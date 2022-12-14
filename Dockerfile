@@ -14,4 +14,4 @@ RUN python -m pipenv install --system --deploy
 
 COPY django/ .
 
-CMD ["./ele/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["./manage.py", "runserver", "0.0.0.0:8000"]

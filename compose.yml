@@ -19,7 +19,7 @@ services:
     depends_on:
       - postgres
 
-  django:
+  django-prod:
     hostname: django
     build:
       context: .
@@ -28,6 +28,32 @@ services:
       - 8000:8000
     depends_on:
       - postgres
+    profiles:
+      - prod
+
+  django-dev:
+    hostname: django
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    command:
+      - ./manage.py
+      - runserver
+      - 0.0.0.0:8000
+    profiles:
+      - dev
+    environment:
+      POSTGRES_NAME: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      DJANGO_SUPERUSER_PASSWORD: abcdef
+      DJANGO_SUPERUSER_USERNAME: root
 
 volumes:
   pg-data:
