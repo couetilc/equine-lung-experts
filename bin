@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+django() {
+  docker compose run django-dev python ./manage.py $@
+}
+
+"$@"
