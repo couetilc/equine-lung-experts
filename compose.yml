@@ -9,6 +9,8 @@ services:
       PGDATA: /var/lib/postgresql/data
     volumes:
       - pg-data:/var/lib/postgresql/data
+    networks:
+      - ele_network
 
   adminer:
     image: adminer
@@ -18,6 +20,8 @@ services:
       - 8080:8080
     depends_on:
       - postgres
+    networks:
+      - ele_network
 
   django-prod:
     hostname: django
@@ -30,6 +34,8 @@ services:
       - postgres
     profiles:
       - prod
+    networks:
+      - ele_network
 
   django-dev:
     hostname: django
@@ -54,6 +60,11 @@ services:
       POSTGRES_PORT: 5432
       DJANGO_SUPERUSER_PASSWORD: abcdef
       DJANGO_SUPERUSER_USERNAME: root
+    networks:
+      - ele_network
 
 volumes:
   pg-data:
+
+networks:
+  ele_network:

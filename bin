@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
-
+# forwards arguments to django's manage.py script
 django() {
   docker compose run django-dev python ./manage.py $@
+}
+
+# start up the dev environment
+dev() {
+  docker compose --profile dev up $@
+}
+
+# start up the prod environment
+prod() {
+  docker compose --profile prod up $@
 }
 
 "$@"
