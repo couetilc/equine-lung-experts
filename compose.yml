@@ -62,6 +62,8 @@ services:
       DJANGO_SUPERUSER_USERNAME: root
     networks:
       - ele_network
+    volumes:
+      - ./django:/code
 
 volumes:
   pg-data:
