@@ -1,0 +1,43 @@
+<form action="{% url 'ele_app:contact' %}" method="post">
+  {% csrf_token %}
+  <fieldset>
+    <legend>
+      <h1>
+        {{ question.question_text }}
+      </h1>
+    </legend>
+    {% if error_message %}
+    <p>
+      <strong>
+        {{ error_message }}
+      </strong>
+    </p>
+    {% endif %}
+
+    <input type="text" name="name">
+    <label for="name">Name*</label>
+
+    <input type="text" name="email">
+    <label for="email">Email*</label>
+
+    <input type="textbox" name="message">
+    <label for="message">Message*</label>
+
+  </fieldset>
+
+  <input type="submit" value="contact us">
+</form>
+
+{% if latest_message_list %}
+  <ul>
+    {% for message in latest_message_list %}
+      <li>
+        <a href="{% url 'ele_app:messages_detail' message.id %}">
+          {{ message.message }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No polls are available.</p>
+{% endif %}
