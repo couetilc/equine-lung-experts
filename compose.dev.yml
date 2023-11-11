@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: yourdbname
+      POSTGRES_USER: yourdbuser
+      POSTGRES_PASSWORD: yourdbpassword
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432" # TODO envvar
+
+  redis:
+    image: redis/redis-stack:7.2.0-v6 # switch to redis-stack-server for prod
+    ports:
+      - "6379:6379" # TODO envvar
+      - "8001:8001" # RedisInsight
+    volumes:
+      - redis_data:/data
+    environment:
+      REDIS_ARGS: "--requirepass mypassword" # TODO envvar
+
+  smtp:
+    image: rnwood/smtp4dev:v3
+    ports:
+      - "25:25" # TODO envvar
+      - "3000:80"
+    environment:
+      Smtp4dev__serverOptions__port: 25
+
+  web:
+    build:
+      context: app
+      dockerfile: ./app/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000 # use gunicorn for prod # TODO envvar (port)
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8000:8000" # TODO envvar
+    environment:
+      DEBUG: '1'
+      DATABASE_URL: postgres://yourdbuser:yourdbpassword@db/yourdbname # TODO envvar
+      REDIS_URL: redis://redis:6379/1 # TODO envvar
+      EMAIL_HOST: smtp # TODO envvar
+      EMAIL_PORT: 25 # TODO envvar
+    depends_on:
+      - db
+      - redis
+      - smtp
+
+  db-admin:
+    image: adminer:4
+    restart: always
+    ports:
+      - 8080:8080 # TODO envvar
+    environment:
+      POSTGRES_DB: yourdbname # TODO envvar
+      POSTGRES_USER: yourdbuser # TODO envvar
+      POSTGRES_PASSWORD: yourdbpassword # TODO envvar
+      PGDATA: /var/lib/postgresql/data # TODO envvar
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  redis_data:

@@ -1,50 +1,45 @@
 # Equine Lung Experts Website
 
-This project powers [equinelungexperts.com](https://equinelungexperts.com),
-using [Next.js](https://nextjs.org) as a front-end framework.
+## Setup Development Environment
 
-## Repository
+1. Install [`poetry`](https://python-poetry.org/)
+- I recommend using [`pipx`](https://github.com/pypa/pipx) to install `poetry`.
 
-The repository is hosted on Github at
-[couetilc/equine-lung-experts](https://github.com/couetilc/equine-lung-experts).
-The release branch is `master`.
+2. Install [`direnv`](https://direnv.net/) and run `direnv allow .`
 
-## Infrastructure
+3. Install [Docker Desktop](https://docs.docker.com/desktop/)
 
-The website files are stored on a AWS S3 Bucket "equinelungexperts.com" under
-the folder prefix "www" and are proxied by AWS Cloudfront.
+### Background
 
-## Deployment
+The development environment is managed by a combination of `direnv` and Docker.
 
-Steps to deploy:
-```sh
-# 1. Push your updates to `master` branch at https://github.com/couetilc/equine-lung-experts
-git push origin master
-# 2. Create and publish a new release from the `master` branch.
-hub release create -t origin/master -m "YYYY-MM-DD" "YYYY-MM-DD"
-```
+`direnv` sets local environment variables and shell parameters used by scripts
+and the application. Docker provides an isolated and reproducible environment
+for running the application. Conceptually, `direnv` configures the shell
+environment and Docker configures the application environment.
 
-Deployments are performed by a [Github Action](https://docs.github.com/en/actions)
-triggered by publishing a release. The naming convention for releases is the
-date "YYYY-MM-DD" of the release. Append a number to the release name if you
-are performing more than one release in a day.
+### Python Dependencies
 
-## Styling
+`poetry` manages the python version and project dependencies used by the django
+application.
 
-Styling is added using global [SASS](https://sass-lang.com/) stylesheets,
-stored in directory `styles` and imported in `pages/_app.jsx`
-([Click for Next.js Docs](https://nextjs.org/docs/basic-features/built-in-css-support#adding-a-global-stylesheet))
+Any tools added to help with development and testing that are not used by the
+application at runtime should be added to the "dev" poetry group like so:
+`poetry add [package] --group dev`.
 
-## Analytics
+# TODOS
 
-Site analytics are collected by [Plausible.io](https://plausible.io).
+- create a django application in `app/`
+- get dev server running and see if dev flow (edit files and refresh hpage) works
+- create secrets.yml file and create envvar for values in `compose.yml`
+- transfer over the equine lung experts classic site.
 
-TODO
-- add workflow that takes screenshots of the website whenever a PR is made
-  against master and posts those images as a comment in the PR.
+# REMINDERS
 
-TODO
-- How should I manage image assets? next/image? Need to optimize banner image
-- consider snapshot testing whole site to make CI/CD seamless by merging Github
-  PRs from dependabot automatically if all tests pass. (or auto deploy to a
-  staging website and then approve to deploy to production domain?)
+- For production build of Docker image, I'm going to install python
+  dependencies using `poetry install --without dev` to avoid bundled test or
+  development tools.
+- For production build I will likely have another Dockerfile? Or a multi-stage
+  build separate from the dev build? So both dev and prod in same Dockerfile
+  but creating images out of different build steps?
+  
