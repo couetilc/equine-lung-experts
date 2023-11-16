@@ -51,6 +51,8 @@ services:
       - db
       - redis
       - smtp
+    profiles:
+      - app
 
   db-admin:
     image: adminer:4
