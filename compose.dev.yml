@@ -47,6 +47,14 @@ services:
       REDIS_URL: redis://redis:6379/1 # TODO envvar
       EMAIL_HOST: smtp # TODO envvar
       EMAIL_PORT: 25 # TODO envvar
+      DJANGO_SECRET_KEY: "ilikemen" # TODO envvar and update the settings.py file
+      DJANGO_DEBUG: true # TODO envvar and update the settings.py file (need to parse this as a bool for python maybe? or happens automatiicaly by os.environ.get?)
+      DJANGO_ALLOWED_HOSTS: "equinelungexperts.com" # TODO envvar and update settings.py file
+      DJANGO_PG_SERVICE: "ele" # TODO envvar and update settings.py file (note, this determines what settings to pull from a .pg_service.conf file, I need to research this more and take some notes) # see https://www.postgresql.org/docs/current/libpq-pgservice.html
+      DJANGO_PG_PASS: ".ele_pgpass" # see https://www.postgresql.org/docs/current/libpq-pgpass.html IMPORTANT note on file permissions in there.
+      DJANGO_SU_USERNAME: "connorcouetil" # TODO envvar (this may not be an envvar, may just be something in SOPS or a password manager...)
+      DJANGO_SU_EMAIL: "connor@couetil.com" # TODO envvar (this may not be an envvar, may just be something in SOPS or a password manager...)
+      DJANGO_SU_PASSWORD: "pAnw!fV-rJf7Fpw9" # TODO envvar (this may not be an envvar, may just be something in SOPS or a password manager...)
     depends_on:
       - db
       - redis
